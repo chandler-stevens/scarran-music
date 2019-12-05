@@ -45,5 +45,91 @@ namespace ScarranMusic
         {
 
         }
+
+
+        private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void updateSelection()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView8.DataSource;
+
+            if (comboBox2.SelectedItem.ToString() == "All")
+            {
+                bs.Filter += "CONVERT(" + dataGridView8.Columns[0].HeaderText + ", 'System.String') LIKE '%" + textBox1.Text + "%'";
+
+                for (var i = 1; i < dataGridView8.ColumnCount; i++)
+                {
+                    bs.Filter += " OR CONVERT(" + dataGridView8.Columns[i].HeaderText + ", 'System.String') LIKE '%" + textBox1.Text + "%'";
+                }
+            }
+            else
+            {
+                bs.Filter += "CONVERT(" + comboBox2.SelectedItem.ToString() + ", 'System.String') LIKE '%" + textBox1.Text + "%'";
+            }
+
+            dataGridView8.DataSource = bs;
+        }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateSelection();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            updateSelection();
+        }
+
+        private void getItems()
+        {
+            comboBox2.Items.Clear();
+            System.Object[] ItemObject = new System.Object[dataGridView8.ColumnCount + 1];
+            ItemObject[0] = "All";
+            for (int i = 0; i < dataGridView8.ColumnCount; i++)
+            {
+                ItemObject[i + 1] = dataGridView8.Columns[i].HeaderText;
+            }
+            comboBox2.Items.AddRange(ItemObject);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.dataGridView8.AutoGenerateColumns = true;
+
+            if (comboBox1.SelectedItem.ToString() == "Album(s)")
+            {
+                dataGridView8.DataSource = albumBindingSource;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Band(s)")
+            {
+                dataGridView8.DataSource = bandBindingSource;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Artist(s)")
+            {
+                dataGridView8.DataSource = artistBindingSource;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Playlist(s)")
+            {
+                dataGridView8.DataSource = playlistBindingSource;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Concert(s)")
+            {
+                dataGridView8.DataSource = concertBindingSource;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Label(s)")
+            {
+                dataGridView8.DataSource = labelBindingSource;
+            }
+            else
+            {
+                dataGridView8.DataSource = songBindingSource;
+            }
+
+            getItems();
+            dataGridView8.Refresh();
+        }        
     }
 }
