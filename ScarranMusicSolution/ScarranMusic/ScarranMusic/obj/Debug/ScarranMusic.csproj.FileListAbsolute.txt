@@ -1,0 +1,15 @@
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\ScarranMusic.exe.config
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\ScarranMusic.exe
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\ScarranMusic.pdb
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\Google.Protobuf.dll
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\MySql.Data.dll
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\Renci.SshNet.dll
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\bin\Debug\MySql.Data.xml
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.csprojAssemblyReference.cache
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.Form1.resources
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.Properties.Resources.resources
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.csproj.GenerateResource.cache
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.csproj.CopyComplete
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.exe
+C:\Users\chand\Documents\SPU\4410 Database Management\ScarranMusicSolution\ScarranMusic\ScarranMusic\obj\Debug\ScarranMusic.pdb
