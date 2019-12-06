@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace ScarranMusic
 {
@@ -33,22 +28,6 @@ namespace ScarranMusic
             this.songTableAdapter.Fill(this.scarranMusicDataSet.Song);
             // TODO: This line of code loads data into the 'scarranMusicDataSet.Album' table. You can move, or remove it, as needed.
             this.albumTableAdapter.Fill(this.scarranMusicDataSet.Album);
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -80,19 +59,10 @@ namespace ScarranMusic
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            updateSelection();
-        }
-
-        private void getItems()
-        {
-            comboBox2.Items.Clear();
-            System.Object[] ItemObject = new System.Object[dataGridView8.ColumnCount + 1];
-            ItemObject[0] = "All";
-            for (int i = 0; i < dataGridView8.ColumnCount; i++)
+            if (textBox1.TextLength > 0)
             {
-                ItemObject[i + 1] = dataGridView8.Columns[i].HeaderText;
+                updateSelection();
             }
-            comboBox2.Items.AddRange(ItemObject);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,8 +98,86 @@ namespace ScarranMusic
                 dataGridView8.DataSource = songBindingSource;
             }
 
-            getItems();
-            dataGridView8.Refresh();
-        }        
+            comboBox2.Items.Clear();
+            System.Object[] ItemObject = new System.Object[dataGridView8.ColumnCount + 1];
+            ItemObject[0] = "All";
+            for (int i = 0; i < dataGridView8.ColumnCount; i++)
+            {
+                ItemObject[i + 1] = dataGridView8.Columns[i].HeaderText;
+            }
+            comboBox2.Items.AddRange(ItemObject);
+
+            if (comboBox1.SelectedItem.ToString() == "Playlist(s)")
+            {
+                string connectionString = @"Server=leia.cs.spu.edu;Database=stevensc3_db;Uid=stevensc3;Pwd=stevensc310$4410X;";
+
+                string commandText = @"SELECT Playlist.playlistID, Playlist.playlistTitle, SEC_TO_TIME(SUM(TIME_TO_SEC(Song.duration))) AS totalDuration
+                                       FROM Song
+                                       JOIN PlaylistSong ON PlaylistSong.songID = Song.songID
+                                       JOIN Playlist ON Playlist.playlistID = PlaylistSong.playlistID
+                                       GROUP BY Playlist.playlistID;";
+                MySqlConnection myConnection = new MySqlConnection(connectionString);
+                myConnection.Open();
+                MySqlCommand objcmd = new MySqlCommand(commandText, myConnection);
+                MySqlDataAdapter adp = new MySqlDataAdapter(objcmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                myConnection.Close();
+                dataGridView8.DataSource = dt;
+            }
+
+            comboBox2.SelectedItem = "All";
+        }
+
+        private void dataGridView9_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string connectionString = @"Server=leia.cs.spu.edu;Database=stevensc3_db;Uid=stevensc3;Pwd=stevensc310$4410X;";
+            MySqlConnection myConnection = new MySqlConnection(connectionString);
+            myConnection.Open();
+
+            string albumsQuery = @"SELECT Album.albumID, albumTitle, liveRecording
+                                    FROM Album
+                                    JOIN BandAlbum ON Album.albumID = BandAlbum.albumID
+                                    JOIN Band on BandAlbum.bandID = Band.bandID
+                                    WHERE Band.bandID = " + dataGridView9.CurrentRow.Cells[0].Value.ToString();
+            MySqlCommand albumcmd = new MySqlCommand(albumsQuery, myConnection);
+            MySqlDataAdapter albumadp = new MySqlDataAdapter(albumcmd);
+            DataTable albumdt = new DataTable();
+            albumadp.Fill(albumdt);
+            dataGridView10.DataSource = albumdt;
+
+            string songsQuery = @"SELECT Song.songID, songTitle, duration, lyrics
+                                    FROM Song
+                                    JOIN BandSong ON Song.songID = BandSong.songID
+                                    JOIN Band on BandSong.bandID = Band.bandID
+                                    WHERE Band.bandID = " + dataGridView9.CurrentRow.Cells[0].Value.ToString();
+            MySqlCommand songcmd = new MySqlCommand(songsQuery, myConnection);
+            MySqlDataAdapter songadp = new MySqlDataAdapter(songcmd);
+            DataTable songdt = new DataTable();
+            songadp.Fill(songdt);
+            dataGridView11.DataSource = songdt;
+
+            myConnection.Close();
+        }
+
+        private void dataGridView10_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string connectionString = @"Server=leia.cs.spu.edu;Database=stevensc3_db;Uid=stevensc3;Pwd=stevensc310$4410X;";
+            MySqlConnection myConnection = new MySqlConnection(connectionString);
+            myConnection.Open();
+
+            string songsQuery = @"SELECT Song.songID, songTitle, duration, lyrics
+                                    FROM Song
+                                    JOIN AlbumSong ON Song.songID = AlbumSong.songID
+                                    JOIN Album on AlbumSong.albumID = Album.albumID
+                                    WHERE Album.albumID = " + dataGridView10.CurrentRow.Cells[0].Value.ToString();
+            MySqlCommand songcmd = new MySqlCommand(songsQuery, myConnection);
+            MySqlDataAdapter songadp = new MySqlDataAdapter(songcmd);
+            DataTable songdt = new DataTable();
+            songadp.Fill(songdt);
+            dataGridView11.DataSource = songdt;
+
+            myConnection.Close();
+        }
     }
 }
