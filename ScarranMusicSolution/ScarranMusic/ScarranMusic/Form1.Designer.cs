@@ -29,56 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.albumBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.scarranMusicDataSet = new ScarranMusic.ScarranMusicDataSet();
-            this.albumTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.AlbumTableAdapter();
             this.tabBrowse = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.songIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.songTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lyricsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.songBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.albumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albumTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liveRecordingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.bandIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.playlistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playlistTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.concertIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playlistIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.concertBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.labelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.songTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.SongTableAdapter();
-            this.bandTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.BandTableAdapter();
-            this.artistTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.ArtistTableAdapter();
-            this.playlistTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.PlaylistTableAdapter();
-            this.concertTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.ConcertTableAdapter();
-            this.labelTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.LabelTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -87,52 +52,86 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.songIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.songTitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lyricsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dataGridView11 = new System.Windows.Forms.DataGridView();
-            this.songIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.songTitleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durationDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lyricsDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.albumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albumTitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liveRecordingDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.songIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.songTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lyricsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.songBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scarranMusicDataSet = new ScarranMusic.ScarranMusicDataSet();
+            this.albumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albumTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.liveRecordingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.albumBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bandIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.playlistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playlistTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.concertIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playlistIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.concertBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.songIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.songTitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lyricsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.songIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.songTitleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lyricsDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albumIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albumTitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.liveRecordingDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bandIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bandNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albumTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.AlbumTableAdapter();
+            this.songTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.SongTableAdapter();
+            this.bandTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.BandTableAdapter();
+            this.artistTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.ArtistTableAdapter();
+            this.playlistTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.PlaylistTableAdapter();
+            this.concertTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.ConcertTableAdapter();
+            this.labelTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.LabelTableAdapter();
             this.scarranMusicDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSet)).BeginInit();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.dataGridView12 = new System.Windows.Forms.DataGridView();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabBrowse.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.songBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playlistBindingSource)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concertBindingSource)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -141,22 +140,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.songBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playlistBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concertBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSetBindingSource)).BeginInit();
+            this.tabPage11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).BeginInit();
             this.SuspendLayout();
-            // 
-            // albumBindingSource
-            // 
-            this.albumBindingSource.DataMember = "Album";
-            this.albumBindingSource.DataSource = this.scarranMusicDataSet;
-            // 
-            // scarranMusicDataSet
-            // 
-            this.scarranMusicDataSet.DataSetName = "ScarranMusicDataSet";
-            this.scarranMusicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // albumTableAdapter
-            // 
-            this.albumTableAdapter.ClearBeforeFill = true;
             // 
             // tabBrowse
             // 
@@ -204,47 +199,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(745, 359);
             this.dataGridView1.TabIndex = 0;
             // 
-            // songIDDataGridViewTextBoxColumn
-            // 
-            this.songIDDataGridViewTextBoxColumn.DataPropertyName = "songID";
-            this.songIDDataGridViewTextBoxColumn.FillWeight = 37.60684F;
-            this.songIDDataGridViewTextBoxColumn.HeaderText = "songID";
-            this.songIDDataGridViewTextBoxColumn.Name = "songIDDataGridViewTextBoxColumn";
-            this.songIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.songIDDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // songTitleDataGridViewTextBoxColumn
-            // 
-            this.songTitleDataGridViewTextBoxColumn.DataPropertyName = "songTitle";
-            this.songTitleDataGridViewTextBoxColumn.FillWeight = 95.25629F;
-            this.songTitleDataGridViewTextBoxColumn.HeaderText = "songTitle";
-            this.songTitleDataGridViewTextBoxColumn.Name = "songTitleDataGridViewTextBoxColumn";
-            this.songTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.songTitleDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // durationDataGridViewTextBoxColumn
-            // 
-            this.durationDataGridViewTextBoxColumn.DataPropertyName = "duration";
-            this.durationDataGridViewTextBoxColumn.FillWeight = 132.1772F;
-            this.durationDataGridViewTextBoxColumn.HeaderText = "duration";
-            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
-            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.durationDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // lyricsDataGridViewTextBoxColumn
-            // 
-            this.lyricsDataGridViewTextBoxColumn.DataPropertyName = "lyrics";
-            this.lyricsDataGridViewTextBoxColumn.FillWeight = 134.9597F;
-            this.lyricsDataGridViewTextBoxColumn.HeaderText = "lyrics";
-            this.lyricsDataGridViewTextBoxColumn.Name = "lyricsDataGridViewTextBoxColumn";
-            this.lyricsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lyricsDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // songBindingSource
-            // 
-            this.songBindingSource.DataMember = "Song";
-            this.songBindingSource.DataSource = this.scarranMusicDataSet;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView2);
@@ -275,33 +229,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(745, 359);
             this.dataGridView2.TabIndex = 0;
             // 
-            // albumIDDataGridViewTextBoxColumn
-            // 
-            this.albumIDDataGridViewTextBoxColumn.DataPropertyName = "albumID";
-            this.albumIDDataGridViewTextBoxColumn.FillWeight = 30.34188F;
-            this.albumIDDataGridViewTextBoxColumn.HeaderText = "albumID";
-            this.albumIDDataGridViewTextBoxColumn.Name = "albumIDDataGridViewTextBoxColumn";
-            this.albumIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.albumIDDataGridViewTextBoxColumn.Width = 71;
-            // 
-            // albumTitleDataGridViewTextBoxColumn
-            // 
-            this.albumTitleDataGridViewTextBoxColumn.DataPropertyName = "albumTitle";
-            this.albumTitleDataGridViewTextBoxColumn.FillWeight = 105.5413F;
-            this.albumTitleDataGridViewTextBoxColumn.HeaderText = "albumTitle";
-            this.albumTitleDataGridViewTextBoxColumn.Name = "albumTitleDataGridViewTextBoxColumn";
-            this.albumTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.albumTitleDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // liveRecordingDataGridViewCheckBoxColumn
-            // 
-            this.liveRecordingDataGridViewCheckBoxColumn.DataPropertyName = "liveRecording";
-            this.liveRecordingDataGridViewCheckBoxColumn.FillWeight = 164.1168F;
-            this.liveRecordingDataGridViewCheckBoxColumn.HeaderText = "liveRecording";
-            this.liveRecordingDataGridViewCheckBoxColumn.Name = "liveRecordingDataGridViewCheckBoxColumn";
-            this.liveRecordingDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.liveRecordingDataGridViewCheckBoxColumn.Width = 78;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView3);
@@ -330,27 +257,6 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(745, 359);
             this.dataGridView3.TabIndex = 0;
-            // 
-            // bandIDDataGridViewTextBoxColumn
-            // 
-            this.bandIDDataGridViewTextBoxColumn.DataPropertyName = "bandID";
-            this.bandIDDataGridViewTextBoxColumn.HeaderText = "bandID";
-            this.bandIDDataGridViewTextBoxColumn.Name = "bandIDDataGridViewTextBoxColumn";
-            this.bandIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bandIDDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // bandNameDataGridViewTextBoxColumn
-            // 
-            this.bandNameDataGridViewTextBoxColumn.DataPropertyName = "bandName";
-            this.bandNameDataGridViewTextBoxColumn.HeaderText = "bandName";
-            this.bandNameDataGridViewTextBoxColumn.Name = "bandNameDataGridViewTextBoxColumn";
-            this.bandNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bandNameDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // bandBindingSource
-            // 
-            this.bandBindingSource.DataMember = "Band";
-            this.bandBindingSource.DataSource = this.scarranMusicDataSet;
             // 
             // tabPage4
             // 
@@ -382,35 +288,6 @@
             this.dataGridView4.Size = new System.Drawing.Size(745, 359);
             this.dataGridView4.TabIndex = 0;
             // 
-            // artistIDDataGridViewTextBoxColumn
-            // 
-            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "artistID";
-            this.artistIDDataGridViewTextBoxColumn.HeaderText = "artistID";
-            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
-            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.artistIDDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "fName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "fName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fNameDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "lName";
-            this.lNameDataGridViewTextBoxColumn.HeaderText = "lName";
-            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lNameDataGridViewTextBoxColumn.Width = 62;
-            // 
-            // artistBindingSource
-            // 
-            this.artistBindingSource.DataMember = "Artist";
-            this.artistBindingSource.DataSource = this.scarranMusicDataSet;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dataGridView5);
@@ -424,6 +301,8 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
             this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -434,27 +313,9 @@
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(3, 3);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
             this.dataGridView5.Size = new System.Drawing.Size(745, 359);
             this.dataGridView5.TabIndex = 0;
-            // 
-            // playlistIDDataGridViewTextBoxColumn
-            // 
-            this.playlistIDDataGridViewTextBoxColumn.DataPropertyName = "playlistID";
-            this.playlistIDDataGridViewTextBoxColumn.HeaderText = "playlistID";
-            this.playlistIDDataGridViewTextBoxColumn.Name = "playlistIDDataGridViewTextBoxColumn";
-            this.playlistIDDataGridViewTextBoxColumn.Width = 74;
-            // 
-            // playlistTitleDataGridViewTextBoxColumn
-            // 
-            this.playlistTitleDataGridViewTextBoxColumn.DataPropertyName = "playlistTitle";
-            this.playlistTitleDataGridViewTextBoxColumn.HeaderText = "playlistTitle";
-            this.playlistTitleDataGridViewTextBoxColumn.Name = "playlistTitleDataGridViewTextBoxColumn";
-            this.playlistTitleDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // playlistBindingSource
-            // 
-            this.playlistBindingSource.DataMember = "Playlist";
-            this.playlistBindingSource.DataSource = this.scarranMusicDataSet;
             // 
             // tabPage6
             // 
@@ -483,39 +344,6 @@
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.Size = new System.Drawing.Size(745, 359);
             this.dataGridView6.TabIndex = 0;
-            // 
-            // concertIDDataGridViewTextBoxColumn
-            // 
-            this.concertIDDataGridViewTextBoxColumn.DataPropertyName = "concertID";
-            this.concertIDDataGridViewTextBoxColumn.HeaderText = "concertID";
-            this.concertIDDataGridViewTextBoxColumn.Name = "concertIDDataGridViewTextBoxColumn";
-            this.concertIDDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // playlistIDDataGridViewTextBoxColumn1
-            // 
-            this.playlistIDDataGridViewTextBoxColumn1.DataPropertyName = "playlistID";
-            this.playlistIDDataGridViewTextBoxColumn1.HeaderText = "playlistID";
-            this.playlistIDDataGridViewTextBoxColumn1.Name = "playlistIDDataGridViewTextBoxColumn1";
-            this.playlistIDDataGridViewTextBoxColumn1.Width = 74;
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // concertBindingSource
-            // 
-            this.concertBindingSource.DataMember = "Concert";
-            this.concertBindingSource.DataSource = this.scarranMusicDataSet;
             // 
             // tabPage7
             // 
@@ -546,56 +374,12 @@
             this.dataGridView7.Size = new System.Drawing.Size(745, 359);
             this.dataGridView7.TabIndex = 0;
             // 
-            // labelIDDataGridViewTextBoxColumn
-            // 
-            this.labelIDDataGridViewTextBoxColumn.DataPropertyName = "labelID";
-            this.labelIDDataGridViewTextBoxColumn.HeaderText = "labelID";
-            this.labelIDDataGridViewTextBoxColumn.Name = "labelIDDataGridViewTextBoxColumn";
-            this.labelIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.labelIDDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // labelNameDataGridViewTextBoxColumn
-            // 
-            this.labelNameDataGridViewTextBoxColumn.DataPropertyName = "labelName";
-            this.labelNameDataGridViewTextBoxColumn.HeaderText = "labelName";
-            this.labelNameDataGridViewTextBoxColumn.Name = "labelNameDataGridViewTextBoxColumn";
-            this.labelNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.labelNameDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // labelBindingSource
-            // 
-            this.labelBindingSource.DataMember = "Label";
-            this.labelBindingSource.DataSource = this.scarranMusicDataSet;
-            // 
-            // songTableAdapter
-            // 
-            this.songTableAdapter.ClearBeforeFill = true;
-            // 
-            // bandTableAdapter
-            // 
-            this.bandTableAdapter.ClearBeforeFill = true;
-            // 
-            // artistTableAdapter
-            // 
-            this.artistTableAdapter.ClearBeforeFill = true;
-            // 
-            // playlistTableAdapter
-            // 
-            this.playlistTableAdapter.ClearBeforeFill = true;
-            // 
-            // concertTableAdapter
-            // 
-            this.concertTableAdapter.ClearBeforeFill = true;
-            // 
-            // labelTableAdapter
-            // 
-            this.labelTableAdapter.ClearBeforeFill = true;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -692,38 +476,6 @@
             this.dataGridView8.Size = new System.Drawing.Size(698, 269);
             this.dataGridView8.TabIndex = 4;
             // 
-            // songIDDataGridViewTextBoxColumn1
-            // 
-            this.songIDDataGridViewTextBoxColumn1.DataPropertyName = "songID";
-            this.songIDDataGridViewTextBoxColumn1.HeaderText = "songID";
-            this.songIDDataGridViewTextBoxColumn1.Name = "songIDDataGridViewTextBoxColumn1";
-            this.songIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.songIDDataGridViewTextBoxColumn1.Width = 66;
-            // 
-            // songTitleDataGridViewTextBoxColumn1
-            // 
-            this.songTitleDataGridViewTextBoxColumn1.DataPropertyName = "songTitle";
-            this.songTitleDataGridViewTextBoxColumn1.HeaderText = "songTitle";
-            this.songTitleDataGridViewTextBoxColumn1.Name = "songTitleDataGridViewTextBoxColumn1";
-            this.songTitleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.songTitleDataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // durationDataGridViewTextBoxColumn1
-            // 
-            this.durationDataGridViewTextBoxColumn1.DataPropertyName = "duration";
-            this.durationDataGridViewTextBoxColumn1.HeaderText = "duration";
-            this.durationDataGridViewTextBoxColumn1.Name = "durationDataGridViewTextBoxColumn1";
-            this.durationDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.durationDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // lyricsDataGridViewTextBoxColumn1
-            // 
-            this.lyricsDataGridViewTextBoxColumn1.DataPropertyName = "lyrics";
-            this.lyricsDataGridViewTextBoxColumn1.HeaderText = "lyrics";
-            this.lyricsDataGridViewTextBoxColumn1.Name = "lyricsDataGridViewTextBoxColumn1";
-            this.lyricsDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lyricsDataGridViewTextBoxColumn1.Width = 55;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -753,6 +505,9 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.textBox4);
+            this.tabPage10.Controls.Add(this.textBox3);
+            this.tabPage10.Controls.Add(this.textBox2);
             this.tabPage10.Controls.Add(this.dataGridView11);
             this.tabPage10.Controls.Add(this.dataGridView10);
             this.tabPage10.Controls.Add(this.label6);
@@ -788,6 +543,307 @@
             this.dataGridView11.Size = new System.Drawing.Size(272, 312);
             this.dataGridView11.TabIndex = 17;
             // 
+            // dataGridView10
+            // 
+            this.dataGridView10.AllowUserToAddRows = false;
+            this.dataGridView10.AllowUserToDeleteRows = false;
+            this.dataGridView10.AutoGenerateColumns = false;
+            this.dataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.albumIDDataGridViewTextBoxColumn1,
+            this.albumTitleDataGridViewTextBoxColumn1,
+            this.liveRecordingDataGridViewCheckBoxColumn1});
+            this.dataGridView10.DataSource = this.albumBindingSource;
+            this.dataGridView10.Location = new System.Drawing.Point(246, 70);
+            this.dataGridView10.MultiSelect = false;
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.ReadOnly = true;
+            this.dataGridView10.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView10.Size = new System.Drawing.Size(218, 312);
+            this.dataGridView10.TabIndex = 16;
+            this.dataGridView10.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView10_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(243, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Album:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(476, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Song:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Band/Artist:";
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.AllowUserToAddRows = false;
+            this.dataGridView9.AllowUserToDeleteRows = false;
+            this.dataGridView9.AutoGenerateColumns = false;
+            this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bandIDDataGridViewTextBoxColumn1,
+            this.bandNameDataGridViewTextBoxColumn1});
+            this.dataGridView9.DataSource = this.bandBindingSource;
+            this.dataGridView9.Location = new System.Drawing.Point(35, 70);
+            this.dataGridView9.MultiSelect = false;
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.ReadOnly = true;
+            this.dataGridView9.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView9.Size = new System.Drawing.Size(196, 312);
+            this.dataGridView9.TabIndex = 9;
+            this.dataGridView9.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellClick);
+            // 
+            // songIDDataGridViewTextBoxColumn
+            // 
+            this.songIDDataGridViewTextBoxColumn.DataPropertyName = "songID";
+            this.songIDDataGridViewTextBoxColumn.FillWeight = 37.60684F;
+            this.songIDDataGridViewTextBoxColumn.HeaderText = "songID";
+            this.songIDDataGridViewTextBoxColumn.Name = "songIDDataGridViewTextBoxColumn";
+            this.songIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.songIDDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // songTitleDataGridViewTextBoxColumn
+            // 
+            this.songTitleDataGridViewTextBoxColumn.DataPropertyName = "songTitle";
+            this.songTitleDataGridViewTextBoxColumn.FillWeight = 95.25629F;
+            this.songTitleDataGridViewTextBoxColumn.HeaderText = "songTitle";
+            this.songTitleDataGridViewTextBoxColumn.Name = "songTitleDataGridViewTextBoxColumn";
+            this.songTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.songTitleDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "duration";
+            this.durationDataGridViewTextBoxColumn.FillWeight = 132.1772F;
+            this.durationDataGridViewTextBoxColumn.HeaderText = "duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.durationDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // lyricsDataGridViewTextBoxColumn
+            // 
+            this.lyricsDataGridViewTextBoxColumn.DataPropertyName = "lyrics";
+            this.lyricsDataGridViewTextBoxColumn.FillWeight = 134.9597F;
+            this.lyricsDataGridViewTextBoxColumn.HeaderText = "lyrics";
+            this.lyricsDataGridViewTextBoxColumn.Name = "lyricsDataGridViewTextBoxColumn";
+            this.lyricsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lyricsDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // songBindingSource
+            // 
+            this.songBindingSource.DataMember = "Song";
+            this.songBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // scarranMusicDataSet
+            // 
+            this.scarranMusicDataSet.DataSetName = "ScarranMusicDataSet";
+            this.scarranMusicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // albumIDDataGridViewTextBoxColumn
+            // 
+            this.albumIDDataGridViewTextBoxColumn.DataPropertyName = "albumID";
+            this.albumIDDataGridViewTextBoxColumn.FillWeight = 30.34188F;
+            this.albumIDDataGridViewTextBoxColumn.HeaderText = "albumID";
+            this.albumIDDataGridViewTextBoxColumn.Name = "albumIDDataGridViewTextBoxColumn";
+            this.albumIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.albumIDDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // albumTitleDataGridViewTextBoxColumn
+            // 
+            this.albumTitleDataGridViewTextBoxColumn.DataPropertyName = "albumTitle";
+            this.albumTitleDataGridViewTextBoxColumn.FillWeight = 105.5413F;
+            this.albumTitleDataGridViewTextBoxColumn.HeaderText = "albumTitle";
+            this.albumTitleDataGridViewTextBoxColumn.Name = "albumTitleDataGridViewTextBoxColumn";
+            this.albumTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.albumTitleDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // liveRecordingDataGridViewCheckBoxColumn
+            // 
+            this.liveRecordingDataGridViewCheckBoxColumn.DataPropertyName = "liveRecording";
+            this.liveRecordingDataGridViewCheckBoxColumn.FillWeight = 164.1168F;
+            this.liveRecordingDataGridViewCheckBoxColumn.HeaderText = "liveRecording";
+            this.liveRecordingDataGridViewCheckBoxColumn.Name = "liveRecordingDataGridViewCheckBoxColumn";
+            this.liveRecordingDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.liveRecordingDataGridViewCheckBoxColumn.Width = 78;
+            // 
+            // albumBindingSource
+            // 
+            this.albumBindingSource.DataMember = "Album";
+            this.albumBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // bandIDDataGridViewTextBoxColumn
+            // 
+            this.bandIDDataGridViewTextBoxColumn.DataPropertyName = "bandID";
+            this.bandIDDataGridViewTextBoxColumn.HeaderText = "bandID";
+            this.bandIDDataGridViewTextBoxColumn.Name = "bandIDDataGridViewTextBoxColumn";
+            this.bandIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bandIDDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // bandNameDataGridViewTextBoxColumn
+            // 
+            this.bandNameDataGridViewTextBoxColumn.DataPropertyName = "bandName";
+            this.bandNameDataGridViewTextBoxColumn.HeaderText = "bandName";
+            this.bandNameDataGridViewTextBoxColumn.Name = "bandNameDataGridViewTextBoxColumn";
+            this.bandNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bandNameDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // bandBindingSource
+            // 
+            this.bandBindingSource.DataMember = "Band";
+            this.bandBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // artistIDDataGridViewTextBoxColumn
+            // 
+            this.artistIDDataGridViewTextBoxColumn.DataPropertyName = "artistID";
+            this.artistIDDataGridViewTextBoxColumn.HeaderText = "artistID";
+            this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
+            this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.artistIDDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // fNameDataGridViewTextBoxColumn
+            // 
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "fName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "fName";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fNameDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "lName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "lName";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lNameDataGridViewTextBoxColumn.Width = 62;
+            // 
+            // artistBindingSource
+            // 
+            this.artistBindingSource.DataMember = "Artist";
+            this.artistBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // playlistIDDataGridViewTextBoxColumn
+            // 
+            this.playlistIDDataGridViewTextBoxColumn.DataPropertyName = "playlistID";
+            this.playlistIDDataGridViewTextBoxColumn.HeaderText = "playlistID";
+            this.playlistIDDataGridViewTextBoxColumn.Name = "playlistIDDataGridViewTextBoxColumn";
+            this.playlistIDDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // playlistTitleDataGridViewTextBoxColumn
+            // 
+            this.playlistTitleDataGridViewTextBoxColumn.DataPropertyName = "playlistTitle";
+            this.playlistTitleDataGridViewTextBoxColumn.HeaderText = "playlistTitle";
+            this.playlistTitleDataGridViewTextBoxColumn.Name = "playlistTitleDataGridViewTextBoxColumn";
+            this.playlistTitleDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // playlistBindingSource
+            // 
+            this.playlistBindingSource.DataMember = "Playlist";
+            this.playlistBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // concertIDDataGridViewTextBoxColumn
+            // 
+            this.concertIDDataGridViewTextBoxColumn.DataPropertyName = "concertID";
+            this.concertIDDataGridViewTextBoxColumn.HeaderText = "concertID";
+            this.concertIDDataGridViewTextBoxColumn.Name = "concertIDDataGridViewTextBoxColumn";
+            this.concertIDDataGridViewTextBoxColumn.Width = 79;
+            // 
+            // playlistIDDataGridViewTextBoxColumn1
+            // 
+            this.playlistIDDataGridViewTextBoxColumn1.DataPropertyName = "playlistID";
+            this.playlistIDDataGridViewTextBoxColumn1.HeaderText = "playlistID";
+            this.playlistIDDataGridViewTextBoxColumn1.Name = "playlistIDDataGridViewTextBoxColumn1";
+            this.playlistIDDataGridViewTextBoxColumn1.Width = 74;
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "location";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // concertBindingSource
+            // 
+            this.concertBindingSource.DataMember = "Concert";
+            this.concertBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // labelIDDataGridViewTextBoxColumn
+            // 
+            this.labelIDDataGridViewTextBoxColumn.DataPropertyName = "labelID";
+            this.labelIDDataGridViewTextBoxColumn.HeaderText = "labelID";
+            this.labelIDDataGridViewTextBoxColumn.Name = "labelIDDataGridViewTextBoxColumn";
+            this.labelIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.labelIDDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // labelNameDataGridViewTextBoxColumn
+            // 
+            this.labelNameDataGridViewTextBoxColumn.DataPropertyName = "labelName";
+            this.labelNameDataGridViewTextBoxColumn.HeaderText = "labelName";
+            this.labelNameDataGridViewTextBoxColumn.Name = "labelNameDataGridViewTextBoxColumn";
+            this.labelNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.labelNameDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // labelBindingSource
+            // 
+            this.labelBindingSource.DataMember = "Label";
+            this.labelBindingSource.DataSource = this.scarranMusicDataSet;
+            // 
+            // songIDDataGridViewTextBoxColumn1
+            // 
+            this.songIDDataGridViewTextBoxColumn1.DataPropertyName = "songID";
+            this.songIDDataGridViewTextBoxColumn1.HeaderText = "songID";
+            this.songIDDataGridViewTextBoxColumn1.Name = "songIDDataGridViewTextBoxColumn1";
+            this.songIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.songIDDataGridViewTextBoxColumn1.Width = 66;
+            // 
+            // songTitleDataGridViewTextBoxColumn1
+            // 
+            this.songTitleDataGridViewTextBoxColumn1.DataPropertyName = "songTitle";
+            this.songTitleDataGridViewTextBoxColumn1.HeaderText = "songTitle";
+            this.songTitleDataGridViewTextBoxColumn1.Name = "songTitleDataGridViewTextBoxColumn1";
+            this.songTitleDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.songTitleDataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // durationDataGridViewTextBoxColumn1
+            // 
+            this.durationDataGridViewTextBoxColumn1.DataPropertyName = "duration";
+            this.durationDataGridViewTextBoxColumn1.HeaderText = "duration";
+            this.durationDataGridViewTextBoxColumn1.Name = "durationDataGridViewTextBoxColumn1";
+            this.durationDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.durationDataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // lyricsDataGridViewTextBoxColumn1
+            // 
+            this.lyricsDataGridViewTextBoxColumn1.DataPropertyName = "lyrics";
+            this.lyricsDataGridViewTextBoxColumn1.HeaderText = "lyrics";
+            this.lyricsDataGridViewTextBoxColumn1.Name = "lyricsDataGridViewTextBoxColumn1";
+            this.lyricsDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lyricsDataGridViewTextBoxColumn1.Width = 55;
+            // 
             // songIDDataGridViewTextBoxColumn2
             // 
             this.songIDDataGridViewTextBoxColumn2.DataPropertyName = "songID";
@@ -820,27 +876,6 @@
             this.lyricsDataGridViewTextBoxColumn2.ReadOnly = true;
             this.lyricsDataGridViewTextBoxColumn2.Width = 55;
             // 
-            // dataGridView10
-            // 
-            this.dataGridView10.AllowUserToAddRows = false;
-            this.dataGridView10.AllowUserToDeleteRows = false;
-            this.dataGridView10.AutoGenerateColumns = false;
-            this.dataGridView10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.albumIDDataGridViewTextBoxColumn1,
-            this.albumTitleDataGridViewTextBoxColumn1,
-            this.liveRecordingDataGridViewCheckBoxColumn1});
-            this.dataGridView10.DataSource = this.albumBindingSource;
-            this.dataGridView10.Location = new System.Drawing.Point(246, 70);
-            this.dataGridView10.MultiSelect = false;
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.ReadOnly = true;
-            this.dataGridView10.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView10.Size = new System.Drawing.Size(218, 312);
-            this.dataGridView10.TabIndex = 16;
-            this.dataGridView10.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView10_CellClick);
-            // 
             // albumIDDataGridViewTextBoxColumn1
             // 
             this.albumIDDataGridViewTextBoxColumn1.DataPropertyName = "albumID";
@@ -865,53 +900,6 @@
             this.liveRecordingDataGridViewCheckBoxColumn1.ReadOnly = true;
             this.liveRecordingDataGridViewCheckBoxColumn1.Width = 78;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(243, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Album:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(476, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Song:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Band/Artist:";
-            // 
-            // dataGridView9
-            // 
-            this.dataGridView9.AllowUserToAddRows = false;
-            this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.AutoGenerateColumns = false;
-            this.dataGridView9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bandIDDataGridViewTextBoxColumn1,
-            this.bandNameDataGridViewTextBoxColumn1});
-            this.dataGridView9.DataSource = this.bandBindingSource;
-            this.dataGridView9.Location = new System.Drawing.Point(35, 70);
-            this.dataGridView9.MultiSelect = false;
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.ReadOnly = true;
-            this.dataGridView9.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView9.Size = new System.Drawing.Size(196, 312);
-            this.dataGridView9.TabIndex = 9;
-            this.dataGridView9.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellClick);
-            // 
             // bandIDDataGridViewTextBoxColumn1
             // 
             this.bandIDDataGridViewTextBoxColumn1.DataPropertyName = "bandID";
@@ -928,10 +916,112 @@
             this.bandNameDataGridViewTextBoxColumn1.ReadOnly = true;
             this.bandNameDataGridViewTextBoxColumn1.Width = 84;
             // 
+            // albumTableAdapter
+            // 
+            this.albumTableAdapter.ClearBeforeFill = true;
+            // 
+            // songTableAdapter
+            // 
+            this.songTableAdapter.ClearBeforeFill = true;
+            // 
+            // bandTableAdapter
+            // 
+            this.bandTableAdapter.ClearBeforeFill = true;
+            // 
+            // artistTableAdapter
+            // 
+            this.artistTableAdapter.ClearBeforeFill = true;
+            // 
+            // playlistTableAdapter
+            // 
+            this.playlistTableAdapter.ClearBeforeFill = true;
+            // 
+            // concertTableAdapter
+            // 
+            this.concertTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelTableAdapter
+            // 
+            this.labelTableAdapter.ClearBeforeFill = true;
+            // 
             // scarranMusicDataSetBindingSource
             // 
             this.scarranMusicDataSetBindingSource.DataSource = this.scarranMusicDataSet;
             this.scarranMusicDataSetBindingSource.Position = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(35, 44);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 20);
+            this.textBox2.TabIndex = 18;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(246, 44);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(218, 20);
+            this.textBox3.TabIndex = 19;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(479, 44);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(272, 20);
+            this.textBox4.TabIndex = 20;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.textBox5);
+            this.tabPage11.Controls.Add(this.comboBox3);
+            this.tabPage11.Controls.Add(this.dataGridView12);
+            this.tabPage11.Location = new System.Drawing.Point(4, 22);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage11.Size = new System.Drawing.Size(768, 400);
+            this.tabPage11.TabIndex = 3;
+            this.tabPage11.Text = "Query Search";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView12
+            // 
+            this.dataGridView12.AllowUserToAddRows = false;
+            this.dataGridView12.AllowUserToDeleteRows = false;
+            this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView12.Location = new System.Drawing.Point(27, 74);
+            this.dataGridView12.Name = "dataGridView12";
+            this.dataGridView12.ReadOnly = true;
+            this.dataGridView12.Size = new System.Drawing.Size(713, 296);
+            this.dataGridView12.TabIndex = 0;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Which band or solo artist plays this song:",
+            "Who are the members of this band:",
+            "What songs or albums are in this playlist or genre:",
+            "What songs were played at this concert:",
+            "Which concerts included this band or solo artist:",
+            "Which albums included this person:",
+            "Which record labels included this band:"});
+            this.comboBox3.Location = new System.Drawing.Point(27, 26);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(326, 21);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.Text = "Which band or solo artist plays this song:";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(387, 26);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(353, 20);
+            this.textBox5.TabIndex = 2;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // Form1
             // 
@@ -942,29 +1032,21 @@
             this.Name = "Form1";
             this.Text = "Scarran Music Database";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSet)).EndInit();
             this.tabBrowse.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.songBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playlistBindingSource)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concertBindingSource)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
@@ -975,7 +1057,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.songBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playlistBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concertBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSetBindingSource)).EndInit();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1062,6 +1155,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn bandIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn bandNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TabPage tabPage11;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DataGridView dataGridView12;
     }
 }
 
