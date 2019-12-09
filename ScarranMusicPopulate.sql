@@ -216,7 +216,7 @@ VALUES
    (SELECT bandID FROM Band
     WHERE bandName = 'Queen'),
    (SELECT artistID FROM Artist
-    WHERE fName = 'Pauk'
+    WHERE fName = 'Paul'
     AND lName = 'Rodgers')
 );
 

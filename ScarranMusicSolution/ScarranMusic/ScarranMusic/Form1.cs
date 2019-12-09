@@ -7,7 +7,7 @@ namespace ScarranMusic
 {
     public partial class Form1 : Form
     {
-        private int PgSize = 10;
+        private int PgSize = 25;
         private int CurrentPageIndex = 1;
         private int TotalPage = 0;
 
@@ -56,19 +56,14 @@ namespace ScarranMusic
                     JOIN AlbumSong on AlbumSong.songID = Song.songID
                     WHERE Band.bandID = 1 AND AlbumSong.albumID = 1");
 
+            toolStrip1.Enabled = false;
+            toolStrip1.Visible = false;
+
             CalculateTotalPages();
             GetCurrentRecords(1);
 
             btnFirstPage.Enabled = false;
             btnPreviousPage.Enabled = false;
-
-            if (TotalPage == 1)
-            {
-                toolStripProgressBar1.Maximum = 1;
-                toolStripProgressBar1.Value = 1;
-                btnNextPage.Enabled = false;
-                btnLastPage.Enabled = false;
-            }
         }
 
         private void CalculateTotalPages()
@@ -79,28 +74,28 @@ namespace ScarranMusic
             switch (tabBrowse.SelectedIndex)
             {
                 case 0:
-                    rowCount = dataGridView1.Rows.Count;
+                    rowCount = songBindingSource.Count;
                     break;
                 case 1:
-                    rowCount = dataGridView2.Rows.Count;
+                    rowCount = albumBindingSource.Count;
                     break;
                 case 2:
-                    rowCount = dataGridView3.Rows.Count;
+                    rowCount = bandBindingSource.Count;
                     break;
                 case 3:
-                    rowCount = dataGridView4.Rows.Count;
+                    rowCount = artistBindingSource.Count;
                     break;
                 case 4:
-                    rowCount = dataGridView5.Rows.Count;
+                    rowCount = playlistBindingSource.Count;
                     break;
                 case 5:
-                    rowCount = dataGridView6.Rows.Count - 1;
+                    rowCount = concertBindingSource.Count;
                     break;
                 case 6:
-                    rowCount = dataGridView7.Rows.Count;
+                    rowCount = labelBindingSource.Count;
                     break;
                 default:
-                    rowCount = dataGridView1.Rows.Count;
+                    rowCount = songBindingSource.Count;
                     break;
             }
 
@@ -109,7 +104,21 @@ namespace ScarranMusic
             if (rowCount % PgSize > 0)
                 TotalPage += 1;
             toolStripProgressBar1.Maximum = TotalPage;
+            toolStripProgressBar1.Value = 1;
             toolStripLabel1.Text = "Page 1 of " + TotalPage;
+
+            if (TotalPage == 1)
+            {
+                toolStripProgressBar1.Maximum = 1;
+                toolStripProgressBar1.Value = 1;
+                btnNextPage.Enabled = false;
+                btnLastPage.Enabled = false;
+            }
+            else
+            {
+                btnNextPage.Enabled = true;
+                btnLastPage.Enabled = true;
+            }
         }
 
         private void GetCurrentRecords(int page)
