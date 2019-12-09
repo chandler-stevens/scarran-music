@@ -1,4 +1,3 @@
-#TESTING THE EDDITING
 # Insert data into the tables
 
 # Insert the band and its members into database
