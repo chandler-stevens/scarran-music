@@ -326,7 +326,7 @@ VALUES
    'Fierce Panda'
 );
 
-# Insert albums by “Coldplay” into database
+# Insert albums into database
 
 INSERT INTO Album
 VALUES
@@ -394,6 +394,45 @@ VALUES
     WHERE labelName = 'Parlophone')
 );
 
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'A Kind of Magic',
+   TRUE
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL, 
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'A Kind of Magic')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'A Kind of Magic'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'EMI')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'A Kind of Magic'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Capitol')
+);
+
+
 INSERT INTO AlbumLabel
 VALUES
 (
@@ -405,6 +444,60 @@ VALUES
 );
 
 # Insert songs into database
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Who Wants to Live Forever',
+   '00:04:12',
+   'There\'s no time for us
+   There\'s no place for us
+   What is this thing that builds our dreams
+   Yet slips away from us?
+   Who wants to live forever?
+   Who wants to live forever?
+   There\'s no chance for us
+   It\'s all decided for us
+   This world has only one
+   Sweet moment set aside for us
+   Who wants to live forever?
+   Who wants to live forever?
+   Who?
+   Who dares to love forever
+   Oh, when love must die?
+   But touch my tears with your lips
+   Touch my world with your fingertips
+   And we can have forever
+   And we can love forever
+   Forever is our today
+   Who wants to live forever?
+   Who wants to live forever?
+   Forever is our today
+   Who waits forever anyway?'
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'A Kind of Magic'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Who Wants to Live Forever'
+    AND lyrics LIKE 'There\'s no time for us%')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Who Wants to Live Forever'
+    AND lyrics LIKE 'There\'s no time for us%')
+);
 
 INSERT INTO Song
 VALUES
