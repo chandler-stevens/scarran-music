@@ -39,6 +39,101 @@ INSERT INTO Artist
 VALUES
 (
    NULL,
+   'Paul',
+   'Rodgers'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Pauk'
+    AND lName = 'Rodgers')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Adam',
+   'Lambert'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Adam'
+    AND lName = 'Lambert')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Spike',
+   'Edney'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Spike'
+    AND lName = 'Edney')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Neil',
+   'Fairclough'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Neil'
+    AND lName = 'Fairclough')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Tyler',
+   'Warren'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Tyler'
+    AND lName = 'Warren')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
    'Brian',
    'May'
 );
