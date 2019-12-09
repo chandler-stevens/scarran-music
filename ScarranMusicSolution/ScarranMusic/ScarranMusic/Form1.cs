@@ -7,6 +7,10 @@ namespace ScarranMusic
 {
     public partial class Form1 : Form
     {
+        private int PgSize = 10;
+        private int CurrentPageIndex = 1;
+        private int TotalPage = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -42,13 +46,8 @@ namespace ScarranMusic
             // TODO: This line of code loads data into the 'scarranMusicDataSet.Album' table. You can move, or remove it, as needed.
             this.albumTableAdapter.Fill(this.scarranMusicDataSet.Album);
 
-            dataGridView5.AutoGenerateColumns = true;
-            dataGridView5.DataSource = sqlQuery(
-                    @"SELECT Playlist.playlistID, playlistTitle, SEC_TO_TIME(SUM(TIME_TO_SEC(duration))) AS totalDuration
-                        FROM Song
-                        JOIN PlaylistSong ON PlaylistSong.songID = Song.songID
-                        JOIN Playlist ON Playlist.playlistID = PlaylistSong.playlistID
-                        GROUP BY Playlist.playlistID;");
+            dataGridView13.ClearSelection();
+            label10.Text = (System.Convert.ToInt32((sqlQuery("SELECT MAX(playlistID) FROM Playlist").Rows[0][0]).ToString()) + 1).ToString();
 
             dataGridView10.DataSource = sqlQuery(
                 @"SELECT Album.albumID, albumTitle, liveRecording
@@ -64,7 +63,214 @@ namespace ScarranMusic
                     JOIN Band on BandSong.bandID = Band.bandID
                     JOIN AlbumSong on AlbumSong.songID = Song.songID
                     WHERE Band.bandID = 1 AND AlbumSong.albumID = 1");
-        }      
+
+            CalculateTotalPages();
+            GetCurrentRecords(1);
+        }
+
+        private void CalculateTotalPages()
+        {
+            CurrentPageIndex = 1;
+            int rowCount;
+
+            switch (tabBrowse.SelectedIndex)
+            {
+                case 0:
+                    rowCount = dataGridView1.Rows.Count;
+                    break;
+                case 1:
+                    rowCount = dataGridView2.Rows.Count;
+                    break;
+                case 2:
+                    rowCount = dataGridView3.Rows.Count;
+                    break;
+                case 3:
+                    rowCount = dataGridView4.Rows.Count;
+                    break;
+                case 4:
+                    rowCount = dataGridView5.Rows.Count;
+                    break;
+                case 5:
+                    rowCount = dataGridView6.Rows.Count - 1;
+                    break;
+                case 6:
+                    rowCount = dataGridView7.Rows.Count;
+                    break;
+                default:
+                    rowCount = dataGridView1.Rows.Count;
+                    break;
+            }
+
+            TotalPage = rowCount / PgSize;
+            // if any row left after calculated pages, add one more page 
+            if (rowCount % PgSize > 0)
+                TotalPage += 1;
+            toolStripProgressBar1.Maximum = TotalPage;
+        }
+
+        private void GetCurrentRecords(int page)
+        {
+            switch (tabBrowse.SelectedIndex)
+            {
+                case 0:
+                    if (page == 1)
+                    {
+                        dataGridView1.DataSource = sqlQuery("SELECT * FROM Song LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Song " +
+                                                            "WHERE songID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT songID " +
+                                                                    "FROM Song LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                case 1:
+                    if (page == 1)
+                    {
+                        dataGridView2.DataSource = sqlQuery("SELECT * FROM Album LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView2.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Album " +
+                                                            "WHERE albumID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT albumID " +
+                                                                    "FROM Album LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                case 2:
+                    if (page == 1)
+                    {
+                        dataGridView3.DataSource = sqlQuery("SELECT * FROM Band LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView3.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Band " +
+                                                            "WHERE bandID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT bandID " +
+                                                                    "FROM Band LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                case 3:
+                    if (page == 1)
+                    {
+                        dataGridView4.DataSource = sqlQuery("SELECT * FROM Artist LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView4.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Artist " +
+                                                            "WHERE artistID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT artistID " +
+                                                                    "FROM Artist LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                case 4:
+                    dataGridView5.AutoGenerateColumns = true;
+                    if (page == 1)
+                    {
+                        dataGridView5.DataSource = sqlQuery(
+                                @"SELECT Playlist.playlistID, playlistTitle, SEC_TO_TIME(SUM(TIME_TO_SEC(duration))) AS totalDuration
+                                    FROM Song
+                                    JOIN PlaylistSong ON PlaylistSong.songID = Song.songID
+                                    JOIN Playlist ON Playlist.playlistID = PlaylistSong.playlistID
+                                    GROUP BY Playlist.playlistID LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView5.DataSource = sqlQuery(
+                                @"SELECT Playlist.playlistID, playlistTitle, SEC_TO_TIME(SUM(TIME_TO_SEC(duration))) AS totalDuration
+                                    FROM Song
+                                    JOIN PlaylistSong ON PlaylistSong.songID = Song.songID
+                                    JOIN Playlist ON Playlist.playlistID = PlaylistSong.playlistID
+                                    WHERE Playlist.playlistID NOT IN
+                                    (SELECT * FROM
+                                        (SELECT playlistID
+                                            FROM Playlist LIMIT " + ((page - 1) * PgSize) + ") AS temp)" +
+                                    "GROUP BY Playlist.playlistID LIMIT " + PgSize);
+                    }
+                    break;
+                case 5:
+                    if (page == 1)
+                    {
+                        dataGridView6.DataSource = sqlQuery("SELECT * FROM Concert LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView6.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Concert " +
+                                                            "WHERE concertID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT concertID " +
+                                                                    "FROM Concert LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                case 6:
+                    if (page == 1)
+                    {
+                        dataGridView7.DataSource = sqlQuery("SELECT * FROM Label LIMIT " + PgSize);
+                    }
+                    else
+                    {
+                        dataGridView7.DataSource = sqlQuery("SELECT * " +
+                                                            "FROM Label " +
+                                                            "WHERE labelID NOT IN " +
+                                                                "(SELECT * FROM " +
+                                                                    "(SELECT labelID " +
+                                                                    "FROM Label LIMIT " + ((page - 1) * PgSize) +
+                                                                    ") AS temp) LIMIT " + PgSize);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnFirstPage_Click(object sender, EventArgs e)
+        {
+            CurrentPageIndex = 1;
+            toolStripProgressBar1.Value = 1;
+            GetCurrentRecords(CurrentPageIndex);
+        }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex > 1)
+            {
+                CurrentPageIndex--;
+                toolStripProgressBar1.Value--;
+                GetCurrentRecords(CurrentPageIndex);
+            }
+        }
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if (CurrentPageIndex < TotalPage)
+            {
+                CurrentPageIndex++;
+                toolStripProgressBar1.Value++;
+                GetCurrentRecords(CurrentPageIndex);
+            }
+        }
+
+        private void btnLastPage_Click(object sender, EventArgs e)
+        {
+            CurrentPageIndex = TotalPage;
+            toolStripProgressBar1.Value = TotalPage;
+            GetCurrentRecords(CurrentPageIndex);
+        }
 
         private void updateSelection()
         {
@@ -329,6 +535,68 @@ namespace ScarranMusic
             if (textBox5.Text == "")
             {
                 dataGridView12.DataSource = null;
+            }
+        }
+
+        private void tabBrowse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            toolStripProgressBar1.Value = 1;
+            CalculateTotalPages();
+            GetCurrentRecords(1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Server=leia.cs.spu.edu;Database=stevensc3_db;Uid=stevensc3;Pwd=stevensc310$4410X;";
+            MySqlConnection myConnection = new MySqlConnection(connectionString);
+            myConnection.Open();
+
+            MySqlCommand comm = myConnection.CreateCommand();
+            comm.CommandText = "INSERT INTO Playlist VALUES (NULL, @title)";
+            comm.Parameters.AddWithValue("@title", textBox6.Text);
+            comm.ExecuteNonQuery();
+
+            foreach (DataGridViewRow song in dataGridView13.SelectedRows)
+            {
+                MySqlCommand cmd = myConnection.CreateCommand();
+                cmd.CommandText = "INSERT INTO PlaylistSong VALUES (NULL, @playlist, @song)";
+                cmd.Parameters.AddWithValue("@playlist", label10.Text);
+                cmd.Parameters.AddWithValue("@song", song.Cells[0].Value.ToString());
+                cmd.ExecuteNonQuery();
+            }
+            
+            myConnection.Close();
+
+            textBox6.Text = "";
+            label10.Text = (System.Convert.ToInt32((sqlQuery("SELECT MAX(playlistID) FROM Playlist").Rows[0][0]).ToString()) + 1).ToString();
+            label8.Enabled = false;
+            button1.Enabled = false;
+            dataGridView13.ClearSelection();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox6.Text != "")
+            {
+                label8.Enabled = true;
+                button1.Enabled = true;
+            }
+            else
+            {
+                label8.Enabled = false;
+                button1.Enabled = false;
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 3)
+            {
+                toolStrip1.Enabled = true;
+            }
+            else
+            {
+                toolStrip1.Enabled = false;
             }
         }
     }
