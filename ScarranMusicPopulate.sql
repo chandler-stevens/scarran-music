@@ -37,6 +37,21 @@ VALUES
    'Metallica' 
 );
 
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Christina Aguilera' 
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Christina',
+   'Aguilera'
+);
+
 INSERT INTO Artist
 VALUES
 (
@@ -623,6 +638,13 @@ INSERT INTO Label
 VALUES 
 (
    NULL,
+   'RCA'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
    'Elektra'
 );
 
@@ -658,8 +680,94 @@ INSERT INTO Album
 VALUES
 (
    NULL,
+   'Christina Aguilera',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Christina Aguilera'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Christina Aguilera')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Christina Aguilera'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'RCA')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Metallica Nassau Coliseum 1991',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Megaforce')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Elektra')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Vertigo')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Blackend')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
    'Believe',
-   FALSE
+   True
 );
 
 INSERT INTO BandAlbum
@@ -845,6 +953,151 @@ VALUES
 
 
 # Insert songs into database
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Beautiful',
+   NULL,
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Beautiful')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Beautiful')
+);
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Candyman',
+   NULL,
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Candyman')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Candyman')
+);
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Genie In a Bottle',
+   NULL,
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Genie In a Bottle')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Genie In a Bottle')
+);
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Creeping Death',
+   '00:06:36',
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Creeping Death')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Creeping Death')
+);
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Enter Sandman',
+   '00:05:30',
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Enter Sandman')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Enter Sandman')
+);
 
 INSERT INTO Song
 VALUES
@@ -1164,6 +1417,12 @@ VALUES
    'Classical'
 );
 
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Pop'
+);
 
 INSERT INTO Playlist
 VALUES
@@ -1176,7 +1435,114 @@ INSERT INTO Playlist
 VALUES
 (
    NULL,
-   'Metallica Concert Nassau Coliseum 1991'
+   'Metallica Nassau Coliseum 1991'
+);
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Christina Aguilera'
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Beautiful')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Pop'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Beautiful')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Candyman')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Pop'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Candyman')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Genie In a Bottle')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Pop'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Genie In a Bottle')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Enter Sandman')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Metal'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Enter Sandman')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Creeping Death')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Metal'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Creeping Death')
 );
 
 INSERT INTO PlaylistSong
@@ -1278,4 +1644,44 @@ VALUES
     WHERE playlistTitle = 'Coldplay Live 2014'),
    'Royal Albert Hall, London, England',
    '2014-07-01'
+);
+
+INSERT INTO Concert
+VALUES
+(
+   NULL,
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   '2019-12-27'
+);
+
+INSERT INTO Concert
+VALUES
+(
+   NULL,
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   '2019-12-28'
+);
+
+INSERT INTO Concert
+VALUES
+(
+   NULL,
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Christina Aguilera'),
+   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   '2019-12-30'
+);
+
+INSERT INTO Concert
+VALUES
+(
+   NULL,
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
+   'Nassau Veterans Memorial Coliseum, New York, US,
+   '1991-01-01'
 );
