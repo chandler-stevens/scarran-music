@@ -31,22 +31,14 @@ namespace ScarranMusic
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Label' table. You can move, or remove it, as needed.
             this.labelTableAdapter.Fill(this.scarranMusicDataSet.Label);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Concert' table. You can move, or remove it, as needed.
             this.concertTableAdapter.Fill(this.scarranMusicDataSet.Concert);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Playlist' table. You can move, or remove it, as needed.
             this.playlistTableAdapter.Fill(this.scarranMusicDataSet.Playlist);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Artist' table. You can move, or remove it, as needed.
             this.artistTableAdapter.Fill(this.scarranMusicDataSet.Artist);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Band' table. You can move, or remove it, as needed.
             this.bandTableAdapter.Fill(this.scarranMusicDataSet.Band);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Song' table. You can move, or remove it, as needed.
             this.songTableAdapter.Fill(this.scarranMusicDataSet.Song);
-            // TODO: This line of code loads data into the 'scarranMusicDataSet.Album' table. You can move, or remove it, as needed.
             this.albumTableAdapter.Fill(this.scarranMusicDataSet.Album);
 
-            dataGridView13.ClearSelection();
             label10.Text = (System.Convert.ToInt32((sqlQuery("SELECT MAX(playlistID) FROM Playlist").Rows[0][0]).ToString()) + 1).ToString();
 
             dataGridView10.DataSource = sqlQuery(
@@ -66,6 +58,17 @@ namespace ScarranMusic
 
             CalculateTotalPages();
             GetCurrentRecords(1);
+
+            btnFirstPage.Enabled = false;
+            btnPreviousPage.Enabled = false;
+
+            if (TotalPage == 1)
+            {
+                toolStripProgressBar1.Maximum = 1;
+                toolStripProgressBar1.Value = 1;
+                btnNextPage.Enabled = false;
+                btnLastPage.Enabled = false;
+            }
         }
 
         private void CalculateTotalPages()
@@ -106,6 +109,7 @@ namespace ScarranMusic
             if (rowCount % PgSize > 0)
                 TotalPage += 1;
             toolStripProgressBar1.Maximum = TotalPage;
+            toolStripLabel1.Text = "Page 1 of " + TotalPage;
         }
 
         private void GetCurrentRecords(int page)
@@ -243,6 +247,16 @@ namespace ScarranMusic
             CurrentPageIndex = 1;
             toolStripProgressBar1.Value = 1;
             GetCurrentRecords(CurrentPageIndex);
+            toolStripLabel1.Text = "Page 1 of " + TotalPage;
+
+            btnFirstPage.Enabled = false;
+            btnPreviousPage.Enabled = false;
+
+            if (btnLastPage.Enabled == false)
+            {
+                btnNextPage.Enabled = true;
+                btnLastPage.Enabled = true;
+            }
         }
 
         private void btnPreviousPage_Click(object sender, EventArgs e)
@@ -252,6 +266,20 @@ namespace ScarranMusic
                 CurrentPageIndex--;
                 toolStripProgressBar1.Value--;
                 GetCurrentRecords(CurrentPageIndex);
+                toolStripLabel1.Text = "Page " + CurrentPageIndex + " of " + TotalPage;
+
+                if (CurrentPageIndex == 1)
+                {
+                    btnFirstPage.Enabled = false;
+                    btnPreviousPage.Enabled = false;
+                    btnNextPage.Enabled = true;
+                    btnLastPage.Enabled = true;
+                }
+                else if (CurrentPageIndex == (TotalPage - 1))
+                {
+                    btnNextPage.Enabled = true;
+                    btnLastPage.Enabled = true;
+                }
             }
         }
 
@@ -262,6 +290,20 @@ namespace ScarranMusic
                 CurrentPageIndex++;
                 toolStripProgressBar1.Value++;
                 GetCurrentRecords(CurrentPageIndex);
+                toolStripLabel1.Text = "Page " + CurrentPageIndex + " of " + TotalPage;
+
+                if (CurrentPageIndex == TotalPage)
+                {
+                    btnFirstPage.Enabled = true;
+                    btnPreviousPage.Enabled = true;
+                    btnNextPage.Enabled = false;
+                    btnLastPage.Enabled = false;
+                }
+                else if (CurrentPageIndex == 2)
+                {
+                    btnFirstPage.Enabled = true;
+                    btnPreviousPage.Enabled = true;
+                }
             }
         }
 
@@ -270,6 +312,16 @@ namespace ScarranMusic
             CurrentPageIndex = TotalPage;
             toolStripProgressBar1.Value = TotalPage;
             GetCurrentRecords(CurrentPageIndex);
+            toolStripLabel1.Text = "Page " + TotalPage + " of " + TotalPage;
+
+            btnNextPage.Enabled = false;
+            btnLastPage.Enabled = false;
+
+            if (btnFirstPage.Enabled == false)
+            {
+                btnFirstPage.Enabled = true;
+                btnPreviousPage.Enabled = true;
+            }
         }
 
         private void updateSelection()
@@ -301,10 +353,7 @@ namespace ScarranMusic
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.TextLength > 0)
-            {
-                updateSelection();
-            }
+            updateSelection();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -408,10 +457,11 @@ namespace ScarranMusic
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.TextLength > 0)
+            filterDrillDown(dataGridView9, textBox2);
+
+            if (dataGridView9.RowCount != 0)
             {
-                filterDrillDown(dataGridView9, textBox2);
-                dataGridView9_CellClick(dataGridView9, 
+                dataGridView9_CellClick(dataGridView9,
                     new DataGridViewCellEventArgs(
                         dataGridView9.CurrentCell.ColumnIndex,
                         dataGridView9.CurrentRow.Index));
@@ -420,22 +470,20 @@ namespace ScarranMusic
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (textBox3.TextLength > 0)
+            filterDrillDown(dataGridView10, textBox3);
+
+            if (dataGridView10.RowCount != 0)
             {
-                filterDrillDown(dataGridView10, textBox3);
                 dataGridView10_CellClick(dataGridView10,
-                    new DataGridViewCellEventArgs(
-                        dataGridView10.CurrentCell.ColumnIndex,
-                        dataGridView10.CurrentRow.Index));
+                new DataGridViewCellEventArgs(
+                    dataGridView10.CurrentCell.ColumnIndex,
+                    dataGridView10.CurrentRow.Index));
             }
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (textBox4.TextLength > 0)
-            {
-                filterDrillDown(dataGridView11, textBox4);
-            }
+            filterDrillDown(dataGridView11, textBox4);
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -576,7 +624,7 @@ namespace ScarranMusic
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (textBox6.Text != "")
+            if (textBox6.Text != "" && dataGridView13.SelectedRows != null && dataGridView13.SelectedRows.Count > 0)
             {
                 label8.Enabled = true;
                 button1.Enabled = true;
@@ -593,10 +641,32 @@ namespace ScarranMusic
             if (tabControl1.SelectedIndex == 3)
             {
                 toolStrip1.Enabled = true;
+                toolStrip1.Visible = true;
             }
             else
             {
                 toolStrip1.Enabled = false;
+                toolStrip1.Visible = false;
+
+                if (tabControl1.SelectedIndex == 4)
+                {
+                    textBox6.Focus();
+                    dataGridView13.ClearSelection();
+                }
+            }
+        }
+
+        private void dataGridView13_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (textBox6.Text != "" && dataGridView13.SelectedRows != null && dataGridView13.SelectedRows.Count > 0)
+            {
+                label8.Enabled = true;
+                button1.Enabled = true;
+            }
+            else
+            {
+                label8.Enabled = false;
+                button1.Enabled = false;
             }
         }
     }
