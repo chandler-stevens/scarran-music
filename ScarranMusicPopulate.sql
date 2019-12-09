@@ -30,6 +30,89 @@ VALUES
    'Queen' 
 );
 
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Metallica' 
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'James',
+   'Hetfield'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'James'
+    AND lName = 'Hetfield')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Lars',
+   'Ulrich'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Lars'
+    AND lName = 'Ulrich')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Kirk',
+   'Hammett'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Kirk'
+    AND lName = 'Hammett')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Robert',
+   'Trujillo'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Metallica'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Robbert'
+    AND lName = 'Trujillo')
+);
+
 INSERT INTO Artist
 VALUES
 (
@@ -448,6 +531,22 @@ VALUES
     AND lName = 'Harvey')
 );
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Insert record labels associated into database
 
 INSERT INTO Label
@@ -506,7 +605,82 @@ VALUES
    'Fierce Panda'
 );
 
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Manhattan Records'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Megaforce'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Elektra'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Vertigo'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Blackend'
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Insert albums into database
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Believe',
+   FALSE
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Believe')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Believe'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Manhattan Records')
+);
 
 INSERT INTO Album
 VALUES
@@ -661,7 +835,45 @@ VALUES
     WHERE labelName = 'Atlantic')
 );
 
+
+
+
+
+
+
+
+
+
 # Insert songs into database
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'Teir Abhaile Riu',
+   '00:04:05',
+   NULL
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Believe'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Teir Abhaile Riu')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Teir Abhaile Riu')
+);
 
 INSERT INTO Song
 VALUES
@@ -769,7 +981,6 @@ VALUES
     WHERE songTitle = 'Who Wants to Live Forever'
     AND lyrics LIKE 'There\'s no time for us%')
 );
-
 INSERT INTO BandSong
 VALUES
 (
@@ -870,18 +1081,14 @@ VALUES
     But though I try my heart stays still
     It never moves
     Just won\'t be led
-
     And so my mouth waters, to be fed
     And you\'re always in my head
-
     You\'re always in my head
     You\'re always in my head
     You\'re always in my head
-
     You\'re always in my head
     Always in my...
     Always in my...
-
     This, I guess, is to tell you you\'re chosen out from the rest...'
 );
 
@@ -907,7 +1114,90 @@ VALUES
     AND lyrics LIKE 'I think of you%')
 );
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Insert concert using prescribed playlist into database
+
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Rock'
+);
+
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Metal'
+);
+
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Classical'
+);
+
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Classic Violin Hits'
+);
+
+INSERT INTO Playlist
+VALUES
+(
+   NULL,
+   'Metallica Concert Nassau Coliseum 1991'
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Classic Violin Hits'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Teir Abhaile Riu')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Classical'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Teir Abhaile Riu')
+);
 
 INSERT INTO Playlist
 VALUES
@@ -930,12 +1220,54 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Rock'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Viva la Vida'
+    AND lyrics LIKE 'I used to rule the world%')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
    NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Coldplay Live 2014'),
    (SELECT songID FROM Song
     WHERE songTitle = 'Always in My Head'
     AND lyrics LIKE 'I think of you%')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL,
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Rock'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Always in My Head'
+    AND lyrics LIKE 'I think of you%')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Rock'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'Who Wants to Live Forever')
+);
+
+INSERT INTO PlaylistSong
+VALUES
+(
+   NULL, 
+   (SELECT playlistID FROM Playlist
+    WHERE playlistTitle = 'Rock'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'The Sound Of Silence')
 );
 
 INSERT INTO Concert
@@ -947,4 +1279,3 @@ VALUES
    'Royal Albert Hall, London, England',
    '2014-07-01'
 );
-
