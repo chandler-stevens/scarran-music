@@ -13,7 +13,97 @@ INSERT INTO Band
 VALUES
 (
    NULL,
+   'Celtic Woman' 
+);
+
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Disturbed' 
+);
+
+INSERT INTO Band
+VALUES
+(
+   NULL,
    'Queen' 
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Mairead',
+   'Carlin'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Mairead'
+    AND lName = 'Carlin')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Eabha',
+   'McMahon'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Eabha'
+    AND lName = 'McMahon')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Tara',
+   'McNeil'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Tara'
+    AND lName = 'McNeil')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Megan',
+   'Walsh'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Celtic Woman'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Megan'
+    AND lName = 'Walsh')
 );
 
 INSERT INTO Artist
@@ -33,6 +123,82 @@ VALUES
    (SELECT artistID FROM Artist
     WHERE fName = 'Freddy'
     AND lName = 'Mercury')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Dan',
+   'Donegan'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Dan'
+    AND lName = 'Donegan')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Mike',
+   'Wengren'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Mike'
+    AND lName = 'Wengren')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'David',
+   'Draiman'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'David'
+    AND lName = 'Draiman')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'John',
+   'Moyer'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'John'
+    AND lName = 'Moyer')
 );
 
 INSERT INTO Artist
@@ -288,6 +454,20 @@ INSERT INTO Label
 VALUES 
 (
    NULL,
+   'Warner Bros'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Reprise'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
    'Parlophone'
 );
 
@@ -327,6 +507,44 @@ VALUES
 );
 
 # Insert albums into database
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Immortalized',
+   FALSE
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Immortalized')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Immortalized'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Reprise')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Immortalized'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Warner Bros')
+);
 
 INSERT INTO Album
 VALUES
@@ -399,7 +617,7 @@ VALUES
 (
    NULL,
    'A Kind of Magic',
-   TRUE
+   FALSE
 );
 
 INSERT INTO BandAlbum
@@ -444,6 +662,70 @@ VALUES
 );
 
 # Insert songs into database
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'The Sound Of Silence',
+   '00:03:07',
+   'Hello darkness, my old friend
+   I\'ve come to talk with you again
+   Because a vision softly creeping
+   Left its seeds while I was sleeping
+   And the vision that was planted in my brain
+   Still remains
+   Within the sound of silence
+   In restless dreams I walked alone
+   Narrow streets of cobblestone
+   \'Neath the halo of a street lamp
+   I turned my collar to the cold and damp
+   When my eyes were stabbed by the flash of a neon light
+   That split the night
+   And touched the sound of silence
+   And in the naked light I saw
+   Ten thousand people, maybe more
+   People talking without speaking
+   People hearing without listening
+   People writing songs that voices never share
+   And no one dared
+   Disturb the sound of silence
+   \"Fools, \" said I, \"You do not know
+   Silence, like a cancer, grows
+   Hear my words that I might teach you
+   Take my arms that I might reach you\"
+   But my words, like silent raindrops fell
+   And echoed in the wells, of silence
+   And the people bowed and prayed
+   To the neon god they made
+   And the sign flashed out its warning
+   In the words that it was forming
+   And the sign said, \"The words of the prophets are written on the subway walls
+   And tenement halls\"
+   And whispered in the sounds of silence'
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Immortalized'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'The Sound Of Silence'
+    AND lyrics LIKE 'Hello darkness, my old friend%')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Disturbed'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'The Sound Of Silence'
+    AND lyrics LIKE 'Hello darkness, my old friend%')
+);
 
 INSERT INTO Song
 VALUES
