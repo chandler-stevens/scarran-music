@@ -1,12 +1,95 @@
 # Insert data into the tables
 
-# Insert the band “Coldplay” and its members into database
+# Insert the band and its members into database
 
 INSERT INTO Band
 VALUES
 (
    NULL,
    'Coldplay' 
+);
+
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Queen' 
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Freddy',
+   'Mercury'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Freddy'
+    AND lName = 'Mercury')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Brian',
+   'May'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Brian'
+    AND lName = 'May')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Roger',
+   'Taylor'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Roger'
+    AND lName = 'Taylor')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'John',
+   'Deacon'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Queen'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'John'
+    AND lName = 'Deacon')
 );
 
 INSERT INTO Artist
@@ -104,7 +187,7 @@ VALUES
     AND lName = 'Harvey')
 );
 
-# Insert record labels associated with “Coldplay” into database
+# Insert record labels associated into database
 
 INSERT INTO Label
 VALUES 
@@ -226,7 +309,7 @@ VALUES
     WHERE labelName = 'Atlantic')
 );
 
-# Insert songs by “Coldplay” into database
+# Insert songs into database
 
 INSERT INTO Song
 VALUES
@@ -354,7 +437,7 @@ VALUES
     AND lyrics LIKE 'I think of you%')
 );
 
-# Insert “Coldplay” concert using prescribed playlist into database
+# Insert concert using prescribed playlist into database
 
 INSERT INTO Playlist
 VALUES
