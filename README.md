@@ -4,10 +4,10 @@
 ## Music database for CSC 4410: Database Management
 
 ### Connection Details:
-- Server:   leia.cs.spu.edu
-- Database: stevensc3_db
-- Uid:      stevensc3
-- Pwd:      stevensc310$4410X
+- **Server:**   leia.cs.spu.edu
+- **Database:** stevensc3_db
+- **Uid:**      stevensc3
+- **Pwd:**      stevensc310$4410X
 
 ### Application Prerequisites:
 - Microsoft Windows Operating System
