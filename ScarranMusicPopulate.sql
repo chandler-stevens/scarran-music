@@ -44,12 +44,161 @@ VALUES
    'Christina Aguilera' 
 );
 
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Eric Clapton' 
+);
+
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Yardbirds' 
+);
+
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Cream' 
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Jeff',
+   'Beck'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Jeff'
+    AND lName = 'Beck')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Jimmy',
+   'Page'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Yardbirds'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Jimmy'
+    AND lName = 'Page')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Jack',
+   'Bruce'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Jack'
+    AND lName = 'Bruce')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Ginger',
+   'Baker'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Ginger'
+    AND lName = 'Baker')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Eric',
+   'Clapton'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Eric Clapton'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Eric'
+    AND lName = 'Clapton')
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Eric'
+    AND lName = 'Clapton')
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Yardbirds'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Eric'
+    AND lName = 'Clapton')
+);
+
 INSERT INTO Artist
 VALUES
 (
    NULL,
    'Christina',
    'Aguilera'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Christina Aguilera'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Christina'
+    AND lName = 'Aguilera')
 );
 
 INSERT INTO Artist
@@ -662,8 +811,54 @@ VALUES
    'Blackend'
 );
 
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Reaction'
+);
 
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Polydor'
+);
 
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Atco'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'RSO'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Reprise'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Epic'
+);
+
+INSERT INTO Label
+VALUES 
+(
+   NULL,
+   'Columbia'
+);
 
 
 
@@ -675,6 +870,266 @@ VALUES
 
 
 # Insert albums into database
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Eric Clapton',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Eric Clapton'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Eric Clapton')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Eric Clapton'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Atco')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Little Games',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Yardbirds'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Little Games')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Little Games'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Capitol')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Little Games'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Epic')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Little Games'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Columbia')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Roger the Engineer',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Yardbirds'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Roger the Engineer')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Roger the Engineer'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Capitol')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Roger the Engineer'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Epic')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Roger the Engineer'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Columbia')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Goodbye',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Reaction')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Polydor')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Atco')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'RSO')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Goodbye'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Reprise')
+);
+
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Fresh Cream',
+   True
+);
+
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Cream'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Reaction')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Polydor')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Atco')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'RSO')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Fresh Cream'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Reprise')
+);
 
 INSERT INTO Album
 VALUES
