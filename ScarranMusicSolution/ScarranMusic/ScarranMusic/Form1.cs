@@ -54,7 +54,7 @@ namespace ScarranMusic
                     JOIN BandSong ON Song.songID = BandSong.songID
                     JOIN Band on BandSong.bandID = Band.bandID
                     JOIN AlbumSong on AlbumSong.songID = Song.songID
-                    WHERE Band.bandID = 1 AND AlbumSong.albumID = 1");
+                    WHERE Band.bandID = 1 AND AlbumSong.albumID = " + dataGridView10.Rows[0].Cells[0].Value);
 
             toolStrip1.Enabled = false;
             toolStrip1.Visible = false;
@@ -547,8 +547,7 @@ namespace ScarranMusic
                         JOIN Playlist ON PlaylistSong.playlistID = Playlist.playlistID
                         JOIN AlbumSong ON Song.songID = AlbumSong.songID
                         JOIN Album ON AlbumSong.albumID = Album.albumID
-                        WHERE songTitle LIKE '%" + textBox5.Text + "%'" +
-                        "OR albumTitle LIKE '%" + textBox5.Text + "%'");
+                        WHERE playlistTitle LIKE '%" + textBox5.Text + "%'");
             }
             else if (comboBox3.SelectedItem.ToString() == "What songs were played at this concert:")
             {
@@ -574,12 +573,13 @@ namespace ScarranMusic
                         JOIN Song ON PlaylistSong.songID = Song.songID
                         JOIN BandSong ON Song.songID = BandSong.songID
                         JOIN Band ON BandSong.bandID = Band.bandID
-                        WHERE bandName LIKE '%" + textBox5.Text + "%'");
+                        WHERE bandName LIKE '%" + textBox5.Text + "%' " +
+                        "GROUP BY location, date, bandName");
             }
             else if (comboBox3.SelectedItem.ToString() == "Which albums included this person:")
             {
                 dataGridView12.DataSource = sqlQuery(
-                    @"SELECT albumTitle, bandName, fName, lName
+                    @"SELECT albumTitle, liveRecording, bandName, fName, lName
                         FROM Album
                         JOIN BandAlbum ON Album.albumID = BandAlbum.albumID
                         JOIN Band ON BandAlbum.bandID = Band.bandID
@@ -588,7 +588,7 @@ namespace ScarranMusic
                         WHERE fName LIKE '%" + textBox5.Text + "%'" +
                         "OR lName LIKE '%" + textBox5.Text + "%'");
             }
-            else if (comboBox3.SelectedItem.ToString() == "Which record labels included this band:")
+            else if (comboBox3.SelectedItem.ToString() == "Which record labels included this band or solo artist:")
             {
                 dataGridView12.DataSource = sqlQuery(
                     @"SELECT labelName, albumTitle, bandName

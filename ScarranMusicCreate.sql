@@ -1,6 +1,6 @@
 # Create the primary entities
 
-CREATE TABLE Band
+CREATE TABLE IF NOT EXISTS Band
 (
    bandID INT AUTO_INCREMENT,
    bandName VARCHAR(100) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE Band
       PRIMARY KEY (bandID)
 );
 
-CREATE TABLE Artist
+CREATE TABLE IF NOT EXISTS Artist
 (
    artistID INT AUTO_INCREMENT,
    fName VARCHAR(100) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Artist
       PRIMARY KEY (artistID)
 );
 
-CREATE TABLE Album
+CREATE TABLE IF NOT EXISTS Album
 (
    albumID INT AUTO_INCREMENT,
    albumTitle VARCHAR(100) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE Album
       PRIMARY KEY (albumID)
 );
 
-CREATE TABLE Label
+CREATE TABLE IF NOT EXISTS Label
 (
    labelID INT AUTO_INCREMENT,
    labelName VARCHAR(100) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE Label
       PRIMARY KEY (labelID)
 );
 
-CREATE TABLE Song
+CREATE TABLE IF NOT EXISTS Song
 (
    songID INT AUTO_INCREMENT,
    songTitle VARCHAR(100) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE Song
 
 # Create “Playlist” before “Concert” due to One-to-Many relationship
 
-CREATE TABLE Playlist
+CREATE TABLE IF NOT EXISTS Playlist
 (
    playlistID INT AUTO_INCREMENT,
    playlistTitle VARCHAR(100) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE Playlist
       PRIMARY KEY (playlistID)
 );
 
-CREATE TABLE Concert
+CREATE TABLE IF NOT EXISTS Concert
 (
    concertID INT AUTO_INCREMENT,
    playlistID INT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE Concert
 
 # Create the relational tables
 
-CREATE TABLE BandArtist
+CREATE TABLE IF NOT EXISTS BandArtist
 (
    bandArtistID INT AUTO_INCREMENT,
    bandID INT NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE BandArtist
          ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE AlbumSong
+CREATE TABLE IF NOT EXISTS AlbumSong
 (
    albumSongID INT AUTO_INCREMENT,
    albumID INT NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE AlbumSong
          ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE PlaylistSong
+CREATE TABLE IF NOT EXISTS PlaylistSong
 (
    playlistSongID INT AUTO_INCREMENT,
    playlistID INT NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE PlaylistSong
          ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE BandAlbum
+CREATE TABLE IF NOT EXISTS BandAlbum
 (
    bandAlbumID INT AUTO_INCREMENT,
    bandID INT NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE BandAlbum
          ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE BandSong
+CREATE TABLE IF NOT EXISTS BandSong
 (
    bandSongID INT AUTO_INCREMENT,
    bandID INT NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE BandSong
          ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE AlbumLabel
+CREATE TABLE IF NOT EXISTS AlbumLabel
 (
    albumLabelID INT AUTO_INCREMENT,
    albumID INT NOT NULL,

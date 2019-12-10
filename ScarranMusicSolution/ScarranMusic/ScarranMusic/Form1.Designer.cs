@@ -693,7 +693,7 @@
             "What songs were played at this concert:",
             "Which concerts included this band or solo artist:",
             "Which albums included this person:",
-            "Which record labels included this band:"});
+            "Which record labels included this band or solo artist:"});
             this.comboBox3.Location = new System.Drawing.Point(40, 57);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";

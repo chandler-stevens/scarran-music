@@ -6,63 +6,63 @@ INSERT INTO Band
 VALUES
 (
    NULL,
-   'Coldplay' 
+   'Coldplay'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Celtic Woman' 
+   'Celtic Woman'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Disturbed' 
+   'Disturbed'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Queen' 
+   'Queen'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Metallica' 
+   'Metallica'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Christina Aguilera' 
+   'Christina Aguilera'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Eric Clapton' 
+   'Eric Clapton'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Yardbirds' 
+   'Yardbirds'
 );
 
 INSERT INTO Band
 VALUES
 (
    NULL,
-   'Cream' 
+   'Cream'
 );
 
 INSERT INTO Artist
@@ -273,7 +273,7 @@ VALUES
    (SELECT bandID FROM Band
     WHERE bandName = 'Metallica'),
    (SELECT artistID FROM Artist
-    WHERE fName = 'Robbert'
+    WHERE fName = 'Robert'
     AND lName = 'Trujillo')
 );
 
@@ -695,6 +695,50 @@ VALUES
     AND lName = 'Harvey')
 );
 
+INSERT INTO Band
+VALUES
+(
+   NULL,
+   'Simon & Garfunkel'
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Paul',
+   'Simon'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Simon & Garfunkel'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Paul'
+    AND lName = 'Simon')
+);
+
+INSERT INTO Artist
+VALUES
+(
+   NULL,
+   'Art',
+   'Garfunkel'
+);
+
+INSERT INTO BandArtist
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Simon & Garfunkel'),
+   (SELECT artistID FROM Artist
+    WHERE fName = 'Art'
+    AND lName = 'Garfunkel')
+);
 
 
 
@@ -714,147 +758,140 @@ VALUES
 # Insert record labels associated into database
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Warner Bros'
 );
 
 INSERT INTO Label
-VALUES 
-(
-   NULL,
-   'Reprise'
-);
-
-INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Parlophone'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Capitol'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Atlantic'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Third Man'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'EMI'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Fierce Panda'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Manhattan Records'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Megaforce'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'RCA'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Elektra'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Vertigo'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Blackend'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Reaction'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Polydor'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Atco'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'RSO'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Reprise'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Epic'
 );
 
 INSERT INTO Label
-VALUES 
+VALUES
 (
    NULL,
    'Columbia'
@@ -1332,7 +1369,7 @@ VALUES
 INSERT INTO BandAlbum
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT bandID FROM Band
     WHERE bandName = 'Coldplay'),
    (SELECT albumID FROM Album
@@ -1360,7 +1397,7 @@ VALUES
 INSERT INTO BandAlbum
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT bandID FROM Band
     WHERE bandName = 'Queen'),
    (SELECT albumID FROM Album
@@ -1398,7 +1435,33 @@ VALUES
     WHERE labelName = 'Atlantic')
 );
 
+INSERT INTO Album
+VALUES
+(
+   NULL,
+   'Sounds of Silence',
+   FALSE
+);
 
+INSERT INTO BandAlbum
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Simon & Garfunkel'),
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Sounds of Silence')
+);
+
+INSERT INTO AlbumLabel
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Sounds of Silence'),
+   (SELECT labelID FROM Label
+    WHERE labelName = 'Columbia')
+);
 
 
 
@@ -1587,8 +1650,8 @@ INSERT INTO Song
 VALUES
 (
    NULL,
-   'The Sound Of Silence',
-   '00:03:07',
+   'The Sound of Silence',
+   '00:04:08',
    'Hello darkness, my old friend
    I\'ve come to talk with you again
    Because a vision softly creeping
@@ -1632,7 +1695,7 @@ VALUES
    (SELECT albumID FROM Album
     WHERE albumTitle = 'Immortalized'),
    (SELECT songID FROM Song
-    WHERE songTitle = 'The Sound Of Silence'
+    WHERE songTitle = 'The Sound of Silence'
     AND lyrics LIKE 'Hello darkness, my old friend%')
 );
 
@@ -1643,7 +1706,71 @@ VALUES
    (SELECT bandID FROM Band
     WHERE bandName = 'Disturbed'),
    (SELECT songID FROM Song
-    WHERE songTitle = 'The Sound Of Silence'
+    WHERE songTitle = 'The Sound of Silence'
+    AND lyrics LIKE 'Hello darkness, my old friend%')
+);
+
+INSERT INTO Song
+VALUES
+(
+   NULL,
+   'The Sounds of Silence',
+   '00:03:05',
+   'Hello darkness, my old friend
+   I\'ve come to talk with you again
+   Because a vision softly creeping
+   Left its seeds while I was sleeping
+   And the vision that was planted in my brain
+   Still remains
+   Within the sound of silence
+   In restless dreams I walked alone
+   Narrow streets of cobblestone
+   \'Neath the halo of a street lamp
+   I turned my collar to the cold and damp
+   When my eyes were stabbed by the flash of a neon light
+   That split the night
+   And touched the sound of silence
+   And in the naked light I saw
+   Ten thousand people, maybe more
+   People talking without speaking
+   People hearing without listening
+   People writing songs that voices never share
+   And no one dared
+   Disturb the sound of silence
+   \"Fools, \" said I, \"You do not know
+   Silence, like a cancer, grows
+   Hear my words that I might teach you
+   Take my arms that I might reach you\"
+   But my words, like silent raindrops fell
+   And echoed in the wells, of silence
+   And the people bowed and prayed
+   To the neon god they made
+   And the sign flashed out its warning
+   In the words that it was forming
+   And the sign said, \"The words of the prophets are written on the subway walls
+   And tenement halls\"
+   And whispered in the sounds of silence'
+);
+
+INSERT INTO AlbumSong
+VALUES
+(
+   NULL,
+   (SELECT albumID FROM Album
+    WHERE albumTitle = 'Sounds of Silence'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'The Sounds of Silence'
+    AND lyrics LIKE 'Hello darkness, my old friend%')
+);
+
+INSERT INTO BandSong
+VALUES
+(
+   NULL,
+   (SELECT bandID FROM Band
+    WHERE bandName = 'Simon & Garfunkel'),
+   (SELECT songID FROM Song
+    WHERE songTitle = 'The Sounds of Silence'
     AND lyrics LIKE 'Hello darkness, my old friend%')
 );
 
@@ -1903,7 +2030,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
    (SELECT songID FROM Song
@@ -1913,7 +2040,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Pop'),
    (SELECT songID FROM Song
@@ -1923,7 +2050,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
    (SELECT songID FROM Song
@@ -1933,7 +2060,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Pop'),
    (SELECT songID FROM Song
@@ -1943,7 +2070,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
    (SELECT songID FROM Song
@@ -1953,7 +2080,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Pop'),
    (SELECT songID FROM Song
@@ -1963,7 +2090,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
    (SELECT songID FROM Song
@@ -1973,7 +2100,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Metal'),
    (SELECT songID FROM Song
@@ -1983,7 +2110,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
    (SELECT songID FROM Song
@@ -1993,7 +2120,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Metal'),
    (SELECT songID FROM Song
@@ -2003,7 +2130,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Classic Violin Hits'),
    (SELECT songID FROM Song
@@ -2013,7 +2140,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Classical'),
    (SELECT songID FROM Song
@@ -2030,7 +2157,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Coldplay Live 2014'),
    (SELECT songID FROM Song
@@ -2041,7 +2168,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Rock'),
    (SELECT songID FROM Song
@@ -2074,7 +2201,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Rock'),
    (SELECT songID FROM Song
@@ -2084,7 +2211,7 @@ VALUES
 INSERT INTO PlaylistSong
 VALUES
 (
-   NULL, 
+   NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Rock'),
    (SELECT songID FROM Song
@@ -2107,7 +2234,7 @@ VALUES
    NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
-   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   'Zappo\'s Theater at Planet Hollywood, Nevada, US',
    '2019-12-27'
 );
 
@@ -2117,7 +2244,7 @@ VALUES
    NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
-   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   'Zappo\'s Theater at Planet Hollywood, Nevada, US',
    '2019-12-28'
 );
 
@@ -2127,7 +2254,7 @@ VALUES
    NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Christina Aguilera'),
-   'Zappo's Theater at Planet Hollywood, Nevada, US',
+   'Zappo\'s Theater at Planet Hollywood, Nevada, US',
    '2019-12-30'
 );
 
@@ -2137,6 +2264,433 @@ VALUES
    NULL,
    (SELECT playlistID FROM Playlist
     WHERE playlistTitle = 'Metallica Nassau Coliseum 1991'),
-   'Nassau Veterans Memorial Coliseum, New York, US,
-   '1991-01-01'
+   'Nassau Veterans Memorial Coliseum, New York, US',
+   '1991-12-19'
 );
+
+# Luis Miguel
+
+INSERT INTO Label
+VALUES(NULL, 'WEA Latina');
+
+INSERT INTO Album
+VALUES(NULL, 'Romance', FALSE);
+
+INSERT INTO AlbumLabel
+VALUES(NULL,
+	(SELECT albumID FROM Album WHERE albumTitle = 'Romance'),
+	(SELECT labelID FROM Label WHERE labelName = 'WEA Latina'));
+
+INSERT INTO Band
+VALUES(NULL, 'Luis Miguel');
+
+INSERT INTO Artist
+VALUES(NULL, 'Luis', 'Miguel');
+
+INSERT INTO BandArtist
+VALUES (NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Luis Miguel'),
+	(SELECT artistID FROM Artist WHERE fName = 'Luis' AND lName = 'Miguel'));
+
+INSERT INTO BandAlbum
+VALUES(NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Luis Miguel'),
+	(SELECT albumID FROM Album WHERE albumTitle = 'Romance'));
+
+
+# Hip-hop
+
+INSERT INTO Playlist
+VALUES(NULL, 'Hip-hop');
+
+INSERT INTO Album
+VALUES(NULL, 'Take Care', FALSE);
+
+INSERT INTO Song
+VALUES(NULL, 'Take Care', '00:04:37', '[Rihanna]
+I know you\'ve been hurt by someone else
+I can tell by the way you carry yourself
+If you let me, here\'s what I\'ll do
+I\'ll take care of you
+I\'ve loved and I\'ve lost
+
+[Drake – Verse 1]
+I\'ve asked about you and they told me things
+But my mind didn\'t change
+And I still feel the same
+What\'s a life with no fun? please don\'t be so ashamed
+I\'ve had mine, you\'ve had yours we both know
+We know, they don\'t get you like I will
+My only wish is I die real
+\'Cause that truth hurts, and those lies heal
+And you can\'t sleep thinking that he lies still
+So you cry still, tears all in the pillow case
+Big girls all get a little taste,ah
+Pushing me away so I give her space,ah
+Dealing with a heart that I didn\'t break
+I\'ll be there for you, I will care for you
+I keep thinking you just don\'t know
+Trying to run from that, say you\'re done with that
+On your face girl, it just don\'t show
+When you\'re ready, just say you\'re ready
+When all the baggage just ain\'t as heavy
+And the party\'s over, just don\'t forget me
+We\'ll change the pace and we\'ll just go slow
+You won\'t ever have to worry,
+You won\'t ever have to hide
+You\'ve seen all my mistakes
+So look me in my eyes
+
+[Rihanna]
+\'Cause if you let me, here\'s what I\'ll do
+I\'ll take care of you
+I\'ve loved and I\'ve lost
+
+[Drake – Verse 2]
+Yeah
+It\'s my birthday, I\'ll get high if I want to
+Can\'t deny that I want you, but I\'ll lie if I have to
+\'Cause you don\'t say you love me
+To your friends when they ask you
+Even though we both know that you do (you do)
+One time, been in love one time
+You and all your girls in the club one time
+All so convinced that you\'re following your heart
+\'Cause your mind don\'t control what it does sometimes
+We all have our nights though, don\'t be so ashamed
+I\'ve had mine, you\'ve had yours, we both know
+We know, you hate being alone
+You ain\'t the only one
+You hate the fact that you bought the dream
+And they sold you one
+You love your friends but somebody shoulda told you somethin\' to save you
+Instead they say,
+Don\'t tell me, I don\'t care
+If you hurt, I don\'t tell you
+You don\'t care, if you\'re true
+
+Don\'t tell me, I don\'t care
+If you hurt, I don\'t tell you
+You don\'t care, if you\'re true
+
+[Rihanna]
+I know you\'ve been hurt by someone else
+I can tell by the way you carry yourself
+If you let me, here\'s what I\'ll do
+I\'ll take care of you
+I\'ve loved and I\'ve lost');
+
+INSERT INTO AlbumSong
+VALUES(NULL,
+	(SELECT albumID FROM Album WHERE albumTitle = 'Take Care'),
+	(SELECT songID FROM Song WHERE songTitle = 'Take Care' AND lyrics LIKE '[Rihanna]%'));
+
+INSERT INTO PlaylistSong
+VALUES(NULL,
+	(SELECT playlistID FROM Playlist WHERE playlistTitle = 'Hip-hop'),
+	(SELECT songID FROM Song WHERE songTitle = 'Take Care' AND lyrics LIKE '[Rihanna]%'));
+
+
+# Bruce Dickinson
+
+INSERT INTO Artist
+VALUES(NULL, 'Bruce', 'Dickinson');
+
+INSERT INTO Band
+VALUES(NULL, 'Bruce Dickinson');
+
+INSERT INTO BandArtist
+VALUES (NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Bruce Dickinson'),
+	(SELECT artistID FROM Artist WHERE fName = 'Bruce' AND lName = 'Dickinson'));
+
+
+INSERT INTO Album
+VALUES(NULL, 'Accident of Birth', FALSE);
+
+INSERT INTO BandAlbum
+VALUES(NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Bruce Dickinson'),
+	(SELECT albumID FROM Album WHERE albumTitle = 'Accident of Birth'));
+
+INSERT INTO Album
+VALUES(NULL, 'Seventh Son of a Seventh Son', FALSE);
+
+INSERT INTO Band
+VALUES(NULL, 'Iron Maiden');
+
+INSERT INTO BandArtist
+VALUES(NULL,
+       (SELECT bandID FROM Band WHERE bandName = 'Iron Maiden'),
+       (SELECT artistID FROM Artist WHERE fName = 'Bruce' AND lName = 'Dickinson'));
+
+INSERT INTO BandAlbum
+VALUES(NULL,
+       (SELECT bandID FROM Band WHERE bandName = 'Iron Maiden'),
+       (SELECT albumID FROM Album WHERE albumTitle = 'Seventh Son of a Seventh Son'));
+
+# Luciano Pavarotti
+
+INSERT INTO Artist
+VALUES(NULL, 'Luciano', 'Pavarotti');
+
+INSERT INTO Band
+VALUES(NULL, 'Luciano Pavarotti');
+
+INSERT INTO BandArtist
+VALUES (NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Luciano Pavarotti'),
+	(SELECT artistID FROM Artist WHERE fName = 'Luciano' AND lName = 'Pavarotti'));
+
+
+INSERT INTO Album
+VALUES(NULL, 'Puccuni: Turandot' , TRUE);
+
+INSERT INTO BandAlbum
+VALUES(NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Luciano Pavarotti'),
+	(SELECT albumID FROM Album WHERE albumTitle = 'Puccuni: Turandot'));
+
+INSERT INTO Album
+VALUES(NULL, 'Luciano', FALSE);
+
+INSERT INTO BandAlbum
+VALUES(NULL,
+	(SELECT bandID FROM Band WHERE bandName = 'Luciano Pavarotti'),
+	(SELECT albumID FROM Album WHERE albumTitle = 'Luciano'));
+
+INSERT INTO Song
+VALUES(NULL, 'I\'m Cute', '00:02:05',
+       'I\'m cute, yes, it\'s true
+I really can\'t help it
+But what can I do
+When you\'re cute, it just shows
+With these two darling eyes
+And a cute little nose
+
+And a pretty pink dress
+That\'s adorable, yes
+And when they see my dimples
+Then everyone says
+
+Oh shoot!
+Isn\'t she cute, cute, cute
+Oh isn\'t she cute, cute, cute
+
+I\'m the one they adore
+I\'m sweet and I\'m cuddly
+And small just like Dudley but more
+It\'s a chore
+To be constantly cute
+And enchanting to boot
+
+When my lip\'s sticking out
+In that cute little pout
+Then there\'s just no doubt
+Why the guys like to shout
+
+She\'s a beaut!
+Let\'s face it, I\'m cute, cute, cute
+Oh, baby, she\'s cute, cute, cute
+
+Being cute\'s a thing I can\'t hide
+If you look up the word in a book
+There\'s my picture inside!
+TV Guide
+Has me on the cover
+Don\' cha just love her?
+
+I\'m simply a goddess
+And isn\'t she modest?
+I\'m the answer to one of the
+Questions on Trivial Pursuit
+For "Who\'s the most cute?"
+
+Cute, Cute
+Oh, isn\'t she cute, cute, cute
+
+I\'m cute and I\'m sweet
+And I\'m innocent, neat
+And so trusting
+If you want our opinion
+This song is becoming disgusting
+
+I\'m cute
+So what!
+I never am vain
+She\'s becoming a pain in the
+But I\'m also real nice
+I\'m a doll through and through
+
+So big whop-de-do
+I\'m sweet and adoring
+And also real boring
+And that\'s why we\'re snoring at you
+
+That\'s it! You\'ve ruined my entire cute song!
+I am angry! I am furious! I am enraged!
+I have had it!
+
+You\'re awfully cute when you\'re angry
+You really think so?
+A babba dabba dooba do wah!
+She\'s cute!');
+
+INSERT INTO Song
+VALUES(NULL, 'Ain\'t That Cute', '00:03:09',
+       'My mama told me I\'m too young to love
+But I know what I know and I can\'t get enough
+I\'m thinking about you and me holding hands
+Pushing you on a swing
+We can do anything
+Cause when I think of you all I know
+Is that there\'s nothing I won\'t do to be with you
+Ain\'t that cute - holding hands in the park
+Ain\'t that cute - can\'t stay late after dark
+Ain\'t that cute - was in love from the start
+Ain\'t that cute - I could swear you stole my heart
+I often wonder the meaning of love
+Is it something meant just for grown-ups?
+Nick always told me just to follow my dreams
+But with love on my mind it is so hard to see
+And still when I think of you all I know
+Is that there\'s nothing I won\'t do to be with you
+Ain\'t that cute - holding hands in the park
+Ain\'t that cute - can\'t stay late after dark
+Ain\'t that cute - was in love from the start
+Ain\'t that cute - I could swear you stole my heart
+It\'s true if I\'m wrong
+Then tell me girl what should I do
+Or would you even care
+If I told you love could be so simple
+Between me and you
+Oh, baby
+Ain\'t that cute - holding hands in the park
+Ain\'t that cute - can\'t stay late after dark
+Ain\'t that cute - was in love from the start
+Ain\'t that cute - I could swear you stole my heart.');
+
+INSERT INTO Song
+VALUES(NULL, 'I Am the Cute One', '00:02:14',
+       'I am the cute one
+It\'s obvious
+There\'s no comparing
+The two of us
+
+I\'m not to blame
+The facts are plain
+I\'ve got the looks
+I\'ve got the brains
+And I am the cute one
+She\'s just my sister
+
+I am the cute one
+Everyone knows
+I\'ve got the profile
+She\'s got the nose
+
+She is the older
+I am the younger
+So after all is it any wonder?
+I am the cute one
+She\'s just my sister
+
+People say we\'re two peas in a pod
+And that we look like each other
+There\'s something that they forgot
+I am the cute one
+She\'s just my sister
+
+(la la la)
+
+I\'m not to blame
+The facts are plain
+I\'ve got the looks
+I\'ve got the brains
+And I am the cute one
+She\'s just my sister
+
+People say we\'re two peas in a pod
+And that we look like each other
+There\'s something that they forgot
+We\'re not the same whatever you say
+I love her and she is OK
+
+But I am the cute one
+She\'s just my sister
+
+You wish
+I am the cute one
+She\'s just my sister
+
+Untrue
+I am the cute one
+She\'s just my sister
+
+I\'m sorry
+I am the cute one
+She\'s just my sister');
+
+INSERT INTO Song
+VALUES(NULL, 'Cute Without The \'e\' (Cut From The Team)', '00:03:32',
+       'Your lipstick, his collar
+Don\'t bother, angel
+I know exactly what goes on
+When everything you\'ll get is everything that you\'ve wanted, princess
+(Well, which would you prefer?)
+My finger on the trigger, or
+(Me face down, down across your floor?)
+Me face down, dead across your floor
+(Me face down, down across your floor)
+Well, just so long as this thing\'s loaded
+And will you tell all your friends
+You\'ve got your gun to my head?
+This all was only wishful thinking
+This all was only wishful thinking
+And will you tell all your friends
+You\'ve got your gun to my head?
+This all was only wishful thinking
+This all was only wishful thinking
+Let\'s go
+Don\'t bother trying to explain, angel
+I know exactly what goes on when you\'re on, and
+How \'bout I\'m outside of your window?
+(Well, how \'bout I\'m outside of your window)
+Watching him keep the details covered
+You\'re such a sucker for a sweet talker, yeah
+(You\'re such a sucker)
+And will you tell all your friends
+You\'ve got your gun to my head?
+This all was only wishful thinking
+This all was only wishful thinking
+And will you tell all your friends (The only thing)
+You\'ve got your gun to my head? (I regret)
+This all was only wishful thinking (Is that I)
+This all was only wishful thinking (I never let you hold me back)
+Hoping for the best just hoping nothing happens
+A thousand clever lines unread on clever napkins
+I will never ask if you don\'t ever tell me
+I know you well enough to know you\'ll never love me
+Hoping for the best just hoping nothing happens (Why can\'t I feel anything)
+A thousand clever lines unread on clever napkins
+I will never ask if you don\'t ever tell me (From anyone other than you?)
+I know you well enough to know you\'ll never love me
+Hoping for the best just hoping nothing happens (Why can\'t I feel anything)
+A thousand clever lines unread on clever napkins
+I will never ask if you don\'t ever tell me (From anyone other than you?)
+I know you well enough to know
+And all of this was all your fault
+And all of this
+(It makes things worse)
+I stay wrecked and jealous for this
+For this simple reason I
+Just need to keep you in mind
+As something larger than life
+I stay wrecked and jealous for this (She\'ll destroy us all before she\'s through)
+For this simple reason I
+Just need to keep you in mind (And find a way to blame somebody else)
+As something larger than life
+I stay wrecked and jealous for this (She\'ll destroy us all before she\'s through)
+For this simple reason I
+Just need to keep you in mind (And find a way to blame somebody else)
+As something larger than life');
