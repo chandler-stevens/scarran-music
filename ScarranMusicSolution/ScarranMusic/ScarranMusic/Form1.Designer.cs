@@ -75,6 +75,8 @@
             this.labelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.dataGridView12 = new System.Windows.Forms.DataGridView();
@@ -122,6 +124,9 @@
             this.songTitleDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.durationDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lyricsDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label13 = new System.Windows.Forms.Label();
             this.albumTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.AlbumTableAdapter();
             this.songTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.SongTableAdapter();
             this.bandTableAdapter = new ScarranMusic.ScarranMusicDataSetTableAdapters.BandTableAdapter();
@@ -177,6 +182,7 @@
             this.tabPage8.SuspendLayout();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).BeginInit();
+            this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSetBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -191,7 +197,7 @@
             this.tabBrowse.Controls.Add(this.tabPage6);
             this.tabBrowse.Controls.Add(this.tabPage7);
             this.tabBrowse.Location = new System.Drawing.Point(9, 10);
-            this.tabBrowse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.tabBrowse.Name = "tabBrowse";
             this.tabBrowse.SelectedIndex = 0;
             this.tabBrowse.Size = new System.Drawing.Size(1138, 631);
@@ -202,9 +208,9 @@
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1130, 597);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Browse Songs";
@@ -225,7 +231,7 @@
             this.dataGridView1.DataSource = this.songBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1122, 589);
@@ -238,7 +244,7 @@
             this.songIDDataGridViewTextBoxColumn.HeaderText = "songID";
             this.songIDDataGridViewTextBoxColumn.Name = "songIDDataGridViewTextBoxColumn";
             this.songIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.songIDDataGridViewTextBoxColumn.Width = 66;
+            this.songIDDataGridViewTextBoxColumn.Width = 84;
             // 
             // songTitleDataGridViewTextBoxColumn
             // 
@@ -247,7 +253,7 @@
             this.songTitleDataGridViewTextBoxColumn.HeaderText = "songTitle";
             this.songTitleDataGridViewTextBoxColumn.Name = "songTitleDataGridViewTextBoxColumn";
             this.songTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.songTitleDataGridViewTextBoxColumn.Width = 75;
+            this.songTitleDataGridViewTextBoxColumn.Width = 98;
             // 
             // durationDataGridViewTextBoxColumn
             // 
@@ -256,7 +262,7 @@
             this.durationDataGridViewTextBoxColumn.HeaderText = "duration";
             this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
             this.durationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.durationDataGridViewTextBoxColumn.Width = 70;
+            this.durationDataGridViewTextBoxColumn.Width = 94;
             // 
             // lyricsDataGridViewTextBoxColumn
             // 
@@ -265,7 +271,7 @@
             this.lyricsDataGridViewTextBoxColumn.HeaderText = "lyrics";
             this.lyricsDataGridViewTextBoxColumn.Name = "lyricsDataGridViewTextBoxColumn";
             this.lyricsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lyricsDataGridViewTextBoxColumn.Width = 55;
+            this.lyricsDataGridViewTextBoxColumn.Width = 71;
             // 
             // songBindingSource
             // 
@@ -280,11 +286,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1130, 597);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Browse Albums";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -303,10 +309,10 @@
             this.dataGridView2.DataSource = this.albumBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView2.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView2.TabIndex = 0;
             // 
             // albumIDDataGridViewTextBoxColumn
@@ -316,7 +322,7 @@
             this.albumIDDataGridViewTextBoxColumn.HeaderText = "albumID";
             this.albumIDDataGridViewTextBoxColumn.Name = "albumIDDataGridViewTextBoxColumn";
             this.albumIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.albumIDDataGridViewTextBoxColumn.Width = 71;
+            this.albumIDDataGridViewTextBoxColumn.Width = 94;
             // 
             // albumTitleDataGridViewTextBoxColumn
             // 
@@ -325,7 +331,7 @@
             this.albumTitleDataGridViewTextBoxColumn.HeaderText = "albumTitle";
             this.albumTitleDataGridViewTextBoxColumn.Name = "albumTitleDataGridViewTextBoxColumn";
             this.albumTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.albumTitleDataGridViewTextBoxColumn.Width = 80;
+            this.albumTitleDataGridViewTextBoxColumn.Width = 108;
             // 
             // liveRecordingDataGridViewCheckBoxColumn
             // 
@@ -334,7 +340,7 @@
             this.liveRecordingDataGridViewCheckBoxColumn.HeaderText = "liveRecording";
             this.liveRecordingDataGridViewCheckBoxColumn.Name = "liveRecordingDataGridViewCheckBoxColumn";
             this.liveRecordingDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.liveRecordingDataGridViewCheckBoxColumn.Width = 78;
+            this.liveRecordingDataGridViewCheckBoxColumn.Width = 111;
             // 
             // albumBindingSource
             // 
@@ -344,11 +350,11 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 28);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(1130, 597);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Browse Bands";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -366,10 +372,10 @@
             this.dataGridView3.DataSource = this.bandBindingSource;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView3.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView3.TabIndex = 0;
             // 
             // bandIDDataGridViewTextBoxColumn
@@ -378,7 +384,7 @@
             this.bandIDDataGridViewTextBoxColumn.HeaderText = "bandID";
             this.bandIDDataGridViewTextBoxColumn.Name = "bandIDDataGridViewTextBoxColumn";
             this.bandIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bandIDDataGridViewTextBoxColumn.Width = 67;
+            this.bandIDDataGridViewTextBoxColumn.Width = 85;
             // 
             // bandNameDataGridViewTextBoxColumn
             // 
@@ -386,7 +392,7 @@
             this.bandNameDataGridViewTextBoxColumn.HeaderText = "bandName";
             this.bandNameDataGridViewTextBoxColumn.Name = "bandNameDataGridViewTextBoxColumn";
             this.bandNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bandNameDataGridViewTextBoxColumn.Width = 84;
+            this.bandNameDataGridViewTextBoxColumn.Width = 112;
             // 
             // bandBindingSource
             // 
@@ -396,11 +402,11 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.dataGridView4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 28);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage4.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage4.Size = new System.Drawing.Size(1130, 597);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Browse Artists";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -419,10 +425,10 @@
             this.dataGridView4.DataSource = this.artistBindingSource;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView4.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView4.TabIndex = 0;
             // 
             // artistIDDataGridViewTextBoxColumn
@@ -431,7 +437,7 @@
             this.artistIDDataGridViewTextBoxColumn.HeaderText = "artistID";
             this.artistIDDataGridViewTextBoxColumn.Name = "artistIDDataGridViewTextBoxColumn";
             this.artistIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.artistIDDataGridViewTextBoxColumn.Width = 65;
+            this.artistIDDataGridViewTextBoxColumn.Width = 85;
             // 
             // fNameDataGridViewTextBoxColumn
             // 
@@ -439,7 +445,7 @@
             this.fNameDataGridViewTextBoxColumn.HeaderText = "fName";
             this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
             this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fNameDataGridViewTextBoxColumn.Width = 63;
+            this.fNameDataGridViewTextBoxColumn.Width = 82;
             // 
             // lNameDataGridViewTextBoxColumn
             // 
@@ -447,7 +453,7 @@
             this.lNameDataGridViewTextBoxColumn.HeaderText = "lName";
             this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
             this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lNameDataGridViewTextBoxColumn.Width = 62;
+            this.lNameDataGridViewTextBoxColumn.Width = 81;
             // 
             // artistBindingSource
             // 
@@ -457,11 +463,11 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dataGridView5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 28);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage5.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(1130, 597);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Browse Playlists";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -478,9 +484,9 @@
             this.dataGridView5.DataSource = this.playlistBindingSource;
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView5.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView5.TabIndex = 0;
             // 
             // playlistIDDataGridViewTextBoxColumn
@@ -488,14 +494,14 @@
             this.playlistIDDataGridViewTextBoxColumn.DataPropertyName = "playlistID";
             this.playlistIDDataGridViewTextBoxColumn.HeaderText = "playlistID";
             this.playlistIDDataGridViewTextBoxColumn.Name = "playlistIDDataGridViewTextBoxColumn";
-            this.playlistIDDataGridViewTextBoxColumn.Width = 74;
+            this.playlistIDDataGridViewTextBoxColumn.Width = 99;
             // 
             // playlistTitleDataGridViewTextBoxColumn
             // 
             this.playlistTitleDataGridViewTextBoxColumn.DataPropertyName = "playlistTitle";
             this.playlistTitleDataGridViewTextBoxColumn.HeaderText = "playlistTitle";
             this.playlistTitleDataGridViewTextBoxColumn.Name = "playlistTitleDataGridViewTextBoxColumn";
-            this.playlistTitleDataGridViewTextBoxColumn.Width = 83;
+            this.playlistTitleDataGridViewTextBoxColumn.Width = 113;
             // 
             // playlistBindingSource
             // 
@@ -505,11 +511,11 @@
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.dataGridView6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 28);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Location = new System.Drawing.Point(4, 30);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage6.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage6.Size = new System.Drawing.Size(1130, 597);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Browse Concerts";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -527,9 +533,9 @@
             this.dataGridView6.DataSource = this.concertBindingSource;
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView6.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView6.TabIndex = 0;
             // 
             // concertIDDataGridViewTextBoxColumn
@@ -537,28 +543,28 @@
             this.concertIDDataGridViewTextBoxColumn.DataPropertyName = "concertID";
             this.concertIDDataGridViewTextBoxColumn.HeaderText = "concertID";
             this.concertIDDataGridViewTextBoxColumn.Name = "concertIDDataGridViewTextBoxColumn";
-            this.concertIDDataGridViewTextBoxColumn.Width = 79;
+            this.concertIDDataGridViewTextBoxColumn.Width = 101;
             // 
             // playlistIDDataGridViewTextBoxColumn1
             // 
             this.playlistIDDataGridViewTextBoxColumn1.DataPropertyName = "playlistID";
             this.playlistIDDataGridViewTextBoxColumn1.HeaderText = "playlistID";
             this.playlistIDDataGridViewTextBoxColumn1.Name = "playlistIDDataGridViewTextBoxColumn1";
-            this.playlistIDDataGridViewTextBoxColumn1.Width = 74;
+            this.playlistIDDataGridViewTextBoxColumn1.Width = 99;
             // 
             // locationDataGridViewTextBoxColumn
             // 
             this.locationDataGridViewTextBoxColumn.DataPropertyName = "location";
             this.locationDataGridViewTextBoxColumn.HeaderText = "location";
             this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.Width = 69;
+            this.locationDataGridViewTextBoxColumn.Width = 90;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
             this.dateDataGridViewTextBoxColumn.HeaderText = "date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 53;
+            this.dateDataGridViewTextBoxColumn.Width = 65;
             // 
             // concertBindingSource
             // 
@@ -568,11 +574,11 @@
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.dataGridView7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 28);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Location = new System.Drawing.Point(4, 30);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage7.Size = new System.Drawing.Size(1130, 599);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage7.Size = new System.Drawing.Size(1130, 597);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Browse Labels";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -590,10 +596,10 @@
             this.dataGridView7.DataSource = this.labelBindingSource;
             this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView7.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.Size = new System.Drawing.Size(1122, 591);
+            this.dataGridView7.Size = new System.Drawing.Size(1122, 589);
             this.dataGridView7.TabIndex = 0;
             // 
             // labelIDDataGridViewTextBoxColumn
@@ -602,7 +608,7 @@
             this.labelIDDataGridViewTextBoxColumn.HeaderText = "labelID";
             this.labelIDDataGridViewTextBoxColumn.Name = "labelIDDataGridViewTextBoxColumn";
             this.labelIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.labelIDDataGridViewTextBoxColumn.Width = 65;
+            this.labelIDDataGridViewTextBoxColumn.Width = 83;
             // 
             // labelNameDataGridViewTextBoxColumn
             // 
@@ -610,7 +616,7 @@
             this.labelNameDataGridViewTextBoxColumn.HeaderText = "labelName";
             this.labelNameDataGridViewTextBoxColumn.Name = "labelNameDataGridViewTextBoxColumn";
             this.labelNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.labelNameDataGridViewTextBoxColumn.Width = 82;
+            this.labelNameDataGridViewTextBoxColumn.Width = 110;
             // 
             // labelBindingSource
             // 
@@ -624,8 +630,9 @@
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage12);
+            this.tabControl1.Controls.Add(this.tabPage13);
             this.tabControl1.Location = new System.Drawing.Point(18, 20);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1164, 689);
@@ -635,21 +642,43 @@
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.Color.SlateGray;
+            this.tabPage11.Controls.Add(this.label12);
+            this.tabPage11.Controls.Add(this.label11);
             this.tabPage11.Controls.Add(this.textBox5);
             this.tabPage11.Controls.Add(this.comboBox3);
             this.tabPage11.Controls.Add(this.dataGridView12);
             this.tabPage11.Location = new System.Drawing.Point(4, 30);
-            this.tabPage11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage11.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage11.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage11.Size = new System.Drawing.Size(1156, 655);
             this.tabPage11.TabIndex = 3;
             this.tabPage11.Text = "Query Search";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Location = new System.Drawing.Point(576, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 21);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Keyword:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(36, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 21);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Query:";
+            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(580, 42);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(580, 57);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(527, 29);
             this.textBox5.TabIndex = 2;
@@ -666,8 +695,8 @@
             "Which concerts included this band or solo artist:",
             "Which albums included this person:",
             "Which record labels included this band:"});
-            this.comboBox3.Location = new System.Drawing.Point(40, 42);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Location = new System.Drawing.Point(40, 57);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(487, 29);
             this.comboBox3.TabIndex = 1;
@@ -681,7 +710,7 @@
             this.dataGridView12.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView12.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView12.Location = new System.Drawing.Point(40, 119);
-            this.dataGridView12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView12.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView12.Name = "dataGridView12";
             this.dataGridView12.ReadOnly = true;
             this.dataGridView12.Size = new System.Drawing.Size(1070, 479);
@@ -700,17 +729,17 @@
             this.tabPage10.Controls.Add(this.label4);
             this.tabPage10.Controls.Add(this.dataGridView9);
             this.tabPage10.Location = new System.Drawing.Point(4, 30);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage10.Size = new System.Drawing.Size(1156, 655);
             this.tabPage10.TabIndex = 2;
             this.tabPage10.Text = "Drill Down";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(719, 71);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Location = new System.Drawing.Point(719, 51);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(406, 29);
             this.textBox4.TabIndex = 20;
@@ -718,8 +747,8 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(369, 71);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(369, 51);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(325, 29);
             this.textBox3.TabIndex = 19;
@@ -727,8 +756,8 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 71);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(53, 51);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(292, 29);
             this.textBox2.TabIndex = 18;
@@ -747,13 +776,13 @@
             this.durationDataGridViewTextBoxColumn2,
             this.lyricsDataGridViewTextBoxColumn2});
             this.dataGridView11.DataSource = this.songBindingSource;
-            this.dataGridView11.Location = new System.Drawing.Point(719, 113);
-            this.dataGridView11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView11.Location = new System.Drawing.Point(719, 103);
+            this.dataGridView11.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView11.MultiSelect = false;
             this.dataGridView11.Name = "dataGridView11";
             this.dataGridView11.ReadOnly = true;
             this.dataGridView11.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView11.Size = new System.Drawing.Size(408, 504);
+            this.dataGridView11.Size = new System.Drawing.Size(408, 514);
             this.dataGridView11.TabIndex = 17;
             // 
             // songIDDataGridViewTextBoxColumn2
@@ -762,7 +791,7 @@
             this.songIDDataGridViewTextBoxColumn2.HeaderText = "songID";
             this.songIDDataGridViewTextBoxColumn2.Name = "songIDDataGridViewTextBoxColumn2";
             this.songIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.songIDDataGridViewTextBoxColumn2.Width = 66;
+            this.songIDDataGridViewTextBoxColumn2.Width = 84;
             // 
             // songTitleDataGridViewTextBoxColumn2
             // 
@@ -770,7 +799,7 @@
             this.songTitleDataGridViewTextBoxColumn2.HeaderText = "songTitle";
             this.songTitleDataGridViewTextBoxColumn2.Name = "songTitleDataGridViewTextBoxColumn2";
             this.songTitleDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.songTitleDataGridViewTextBoxColumn2.Width = 75;
+            this.songTitleDataGridViewTextBoxColumn2.Width = 98;
             // 
             // durationDataGridViewTextBoxColumn2
             // 
@@ -778,7 +807,7 @@
             this.durationDataGridViewTextBoxColumn2.HeaderText = "duration";
             this.durationDataGridViewTextBoxColumn2.Name = "durationDataGridViewTextBoxColumn2";
             this.durationDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.durationDataGridViewTextBoxColumn2.Width = 70;
+            this.durationDataGridViewTextBoxColumn2.Width = 94;
             // 
             // lyricsDataGridViewTextBoxColumn2
             // 
@@ -786,7 +815,7 @@
             this.lyricsDataGridViewTextBoxColumn2.HeaderText = "lyrics";
             this.lyricsDataGridViewTextBoxColumn2.Name = "lyricsDataGridViewTextBoxColumn2";
             this.lyricsDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.lyricsDataGridViewTextBoxColumn2.Width = 55;
+            this.lyricsDataGridViewTextBoxColumn2.Width = 71;
             // 
             // dataGridView10
             // 
@@ -800,13 +829,13 @@
             this.albumTitleDataGridViewTextBoxColumn1,
             this.liveRecordingDataGridViewCheckBoxColumn1});
             this.dataGridView10.DataSource = this.albumBindingSource;
-            this.dataGridView10.Location = new System.Drawing.Point(369, 113);
-            this.dataGridView10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView10.Location = new System.Drawing.Point(369, 103);
+            this.dataGridView10.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView10.MultiSelect = false;
             this.dataGridView10.Name = "dataGridView10";
             this.dataGridView10.ReadOnly = true;
             this.dataGridView10.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView10.Size = new System.Drawing.Size(327, 504);
+            this.dataGridView10.Size = new System.Drawing.Size(327, 514);
             this.dataGridView10.TabIndex = 16;
             this.dataGridView10.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView10_CellClick);
             // 
@@ -816,7 +845,7 @@
             this.albumIDDataGridViewTextBoxColumn1.HeaderText = "albumID";
             this.albumIDDataGridViewTextBoxColumn1.Name = "albumIDDataGridViewTextBoxColumn1";
             this.albumIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.albumIDDataGridViewTextBoxColumn1.Width = 71;
+            this.albumIDDataGridViewTextBoxColumn1.Width = 94;
             // 
             // albumTitleDataGridViewTextBoxColumn1
             // 
@@ -824,7 +853,7 @@
             this.albumTitleDataGridViewTextBoxColumn1.HeaderText = "albumTitle";
             this.albumTitleDataGridViewTextBoxColumn1.Name = "albumTitleDataGridViewTextBoxColumn1";
             this.albumTitleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.albumTitleDataGridViewTextBoxColumn1.Width = 80;
+            this.albumTitleDataGridViewTextBoxColumn1.Width = 108;
             // 
             // liveRecordingDataGridViewCheckBoxColumn1
             // 
@@ -832,12 +861,13 @@
             this.liveRecordingDataGridViewCheckBoxColumn1.HeaderText = "liveRecording";
             this.liveRecordingDataGridViewCheckBoxColumn1.Name = "liveRecordingDataGridViewCheckBoxColumn1";
             this.liveRecordingDataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.liveRecordingDataGridViewCheckBoxColumn1.Width = 78;
+            this.liveRecordingDataGridViewCheckBoxColumn1.Width = 111;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(364, 25);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(365, 17);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 21);
@@ -847,7 +877,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(714, 25);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(715, 17);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 21);
@@ -857,7 +888,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 25);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(49, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 21);
@@ -875,13 +907,13 @@
             this.bandIDDataGridViewTextBoxColumn1,
             this.bandNameDataGridViewTextBoxColumn1});
             this.dataGridView9.DataSource = this.bandBindingSource;
-            this.dataGridView9.Location = new System.Drawing.Point(53, 113);
-            this.dataGridView9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView9.Location = new System.Drawing.Point(53, 103);
+            this.dataGridView9.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView9.MultiSelect = false;
             this.dataGridView9.Name = "dataGridView9";
             this.dataGridView9.ReadOnly = true;
             this.dataGridView9.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView9.Size = new System.Drawing.Size(294, 504);
+            this.dataGridView9.Size = new System.Drawing.Size(294, 514);
             this.dataGridView9.TabIndex = 9;
             this.dataGridView9.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView9_CellClick);
             // 
@@ -891,7 +923,7 @@
             this.bandIDDataGridViewTextBoxColumn1.HeaderText = "bandID";
             this.bandIDDataGridViewTextBoxColumn1.Name = "bandIDDataGridViewTextBoxColumn1";
             this.bandIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.bandIDDataGridViewTextBoxColumn1.Width = 67;
+            this.bandIDDataGridViewTextBoxColumn1.Width = 85;
             // 
             // bandNameDataGridViewTextBoxColumn1
             // 
@@ -899,7 +931,7 @@
             this.bandNameDataGridViewTextBoxColumn1.HeaderText = "bandName";
             this.bandNameDataGridViewTextBoxColumn1.Name = "bandNameDataGridViewTextBoxColumn1";
             this.bandNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.bandNameDataGridViewTextBoxColumn1.Width = 84;
+            this.bandNameDataGridViewTextBoxColumn1.Width = 112;
             // 
             // tabPage9
             // 
@@ -912,9 +944,9 @@
             this.tabPage9.Controls.Add(this.comboBox1);
             this.tabPage9.Controls.Add(this.label1);
             this.tabPage9.Location = new System.Drawing.Point(4, 30);
-            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage9.Size = new System.Drawing.Size(1156, 655);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Search Engine";
@@ -922,7 +954,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(674, 45);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(674, 19);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 21);
@@ -932,7 +965,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(361, 45);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(361, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 21);
@@ -948,8 +982,8 @@
             "songTitle",
             "duration",
             "lyrics"});
-            this.comboBox2.Location = new System.Drawing.Point(366, 91);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Location = new System.Drawing.Point(366, 65);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(237, 29);
             this.comboBox2.TabIndex = 6;
@@ -958,8 +992,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(678, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(678, 65);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(418, 29);
@@ -979,11 +1013,11 @@
             this.durationDataGridViewTextBoxColumn1,
             this.lyricsDataGridViewTextBoxColumn1});
             this.dataGridView8.DataSource = this.songBindingSource;
-            this.dataGridView8.Location = new System.Drawing.Point(51, 176);
-            this.dataGridView8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView8.Location = new System.Drawing.Point(51, 117);
+            this.dataGridView8.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.ReadOnly = true;
-            this.dataGridView8.Size = new System.Drawing.Size(1047, 434);
+            this.dataGridView8.Size = new System.Drawing.Size(1047, 493);
             this.dataGridView8.TabIndex = 4;
             // 
             // songIDDataGridViewTextBoxColumn1
@@ -992,7 +1026,7 @@
             this.songIDDataGridViewTextBoxColumn1.HeaderText = "songID";
             this.songIDDataGridViewTextBoxColumn1.Name = "songIDDataGridViewTextBoxColumn1";
             this.songIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.songIDDataGridViewTextBoxColumn1.Width = 66;
+            this.songIDDataGridViewTextBoxColumn1.Width = 84;
             // 
             // songTitleDataGridViewTextBoxColumn1
             // 
@@ -1000,7 +1034,7 @@
             this.songTitleDataGridViewTextBoxColumn1.HeaderText = "songTitle";
             this.songTitleDataGridViewTextBoxColumn1.Name = "songTitleDataGridViewTextBoxColumn1";
             this.songTitleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.songTitleDataGridViewTextBoxColumn1.Width = 75;
+            this.songTitleDataGridViewTextBoxColumn1.Width = 98;
             // 
             // durationDataGridViewTextBoxColumn1
             // 
@@ -1008,7 +1042,7 @@
             this.durationDataGridViewTextBoxColumn1.HeaderText = "duration";
             this.durationDataGridViewTextBoxColumn1.Name = "durationDataGridViewTextBoxColumn1";
             this.durationDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.durationDataGridViewTextBoxColumn1.Width = 70;
+            this.durationDataGridViewTextBoxColumn1.Width = 94;
             // 
             // lyricsDataGridViewTextBoxColumn1
             // 
@@ -1016,7 +1050,7 @@
             this.lyricsDataGridViewTextBoxColumn1.HeaderText = "lyrics";
             this.lyricsDataGridViewTextBoxColumn1.Name = "lyricsDataGridViewTextBoxColumn1";
             this.lyricsDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lyricsDataGridViewTextBoxColumn1.Width = 55;
+            this.lyricsDataGridViewTextBoxColumn1.Width = 71;
             // 
             // comboBox1
             // 
@@ -1029,8 +1063,8 @@
             "Playlist(s)",
             "Concert(s)",
             "Label(s)"});
-            this.comboBox1.Location = new System.Drawing.Point(51, 91);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(51, 65);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 29);
             this.comboBox1.TabIndex = 3;
@@ -1040,7 +1074,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(46, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 21);
@@ -1049,18 +1084,19 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.BackColor = System.Drawing.Color.SlateGray;
             this.tabPage8.Controls.Add(this.tabBrowse);
-            this.tabPage8.Location = new System.Drawing.Point(4, 28);
-            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Location = new System.Drawing.Point(4, 30);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage8.Size = new System.Drawing.Size(1156, 657);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage8.Size = new System.Drawing.Size(1156, 655);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Browser";
-            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage12
             // 
+            this.tabPage12.BackColor = System.Drawing.Color.SlateGray;
             this.tabPage12.Controls.Add(this.label10);
             this.tabPage12.Controls.Add(this.label9);
             this.tabPage12.Controls.Add(this.label8);
@@ -1068,18 +1104,18 @@
             this.tabPage12.Controls.Add(this.label7);
             this.tabPage12.Controls.Add(this.textBox6);
             this.tabPage12.Controls.Add(this.dataGridView13);
-            this.tabPage12.Location = new System.Drawing.Point(4, 28);
-            this.tabPage12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage12.Location = new System.Drawing.Point(4, 30);
+            this.tabPage12.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage12.Size = new System.Drawing.Size(1156, 657);
+            this.tabPage12.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage12.Size = new System.Drawing.Size(1156, 655);
             this.tabPage12.TabIndex = 4;
             this.tabPage12.Text = "Playlist Creator";
-            this.tabPage12.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label10.Location = new System.Drawing.Point(234, 92);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
@@ -1090,6 +1126,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(37, 92);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -1100,7 +1137,8 @@
             // label8
             // 
             this.label8.Enabled = false;
-            this.label8.Location = new System.Drawing.Point(648, 53);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(663, 54);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(171, 49);
@@ -1112,7 +1150,7 @@
             // 
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(858, 43);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(246, 70);
             this.button1.TabIndex = 3;
@@ -1123,6 +1161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(37, 46);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -1133,7 +1172,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(213, 46);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.MaxLength = 100;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(392, 29);
@@ -1145,6 +1184,7 @@
             this.dataGridView13.AllowUserToAddRows = false;
             this.dataGridView13.AllowUserToDeleteRows = false;
             this.dataGridView13.AutoGenerateColumns = false;
+            this.dataGridView13.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView13.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView13.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.songIDDataGridViewTextBoxColumn3,
@@ -1153,7 +1193,7 @@
             this.lyricsDataGridViewTextBoxColumn3});
             this.dataGridView13.DataSource = this.songBindingSource;
             this.dataGridView13.Location = new System.Drawing.Point(9, 144);
-            this.dataGridView13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView13.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView13.Name = "dataGridView13";
             this.dataGridView13.ReadOnly = true;
             this.dataGridView13.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1167,6 +1207,7 @@
             this.songIDDataGridViewTextBoxColumn3.HeaderText = "songID";
             this.songIDDataGridViewTextBoxColumn3.Name = "songIDDataGridViewTextBoxColumn3";
             this.songIDDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.songIDDataGridViewTextBoxColumn3.Width = 84;
             // 
             // songTitleDataGridViewTextBoxColumn3
             // 
@@ -1174,6 +1215,7 @@
             this.songTitleDataGridViewTextBoxColumn3.HeaderText = "songTitle";
             this.songTitleDataGridViewTextBoxColumn3.Name = "songTitleDataGridViewTextBoxColumn3";
             this.songTitleDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.songTitleDataGridViewTextBoxColumn3.Width = 98;
             // 
             // durationDataGridViewTextBoxColumn3
             // 
@@ -1181,6 +1223,7 @@
             this.durationDataGridViewTextBoxColumn3.HeaderText = "duration";
             this.durationDataGridViewTextBoxColumn3.Name = "durationDataGridViewTextBoxColumn3";
             this.durationDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.durationDataGridViewTextBoxColumn3.Width = 94;
             // 
             // lyricsDataGridViewTextBoxColumn3
             // 
@@ -1188,6 +1231,54 @@
             this.lyricsDataGridViewTextBoxColumn3.HeaderText = "lyrics";
             this.lyricsDataGridViewTextBoxColumn3.Name = "lyricsDataGridViewTextBoxColumn3";
             this.lyricsDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.lyricsDataGridViewTextBoxColumn3.Width = 71;
+            // 
+            // tabPage13
+            // 
+            this.tabPage13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage13.BackgroundImage")));
+            this.tabPage13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage13.Controls.Add(this.linkLabel1);
+            this.tabPage13.Controls.Add(this.label13);
+            this.tabPage13.Location = new System.Drawing.Point(4, 30);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage13.Size = new System.Drawing.Size(1156, 655);
+            this.tabPage13.TabIndex = 5;
+            this.tabPage13.Text = "About";
+            this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.LightSteelBlue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.linkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(188, 461);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(748, 45);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://github.com/chandler-stevens/scarran-music";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.MediumOrchid;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label13.Font = new System.Drawing.Font("Corbel", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
+            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(1156, 652);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Scarran Music Database for \r\nCSC 4410: Database Management\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nBy Chan" +
+    "dler Stevens, Elias Rubin, \r\nJason Djasasmita, Yanlin Li";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // albumTableAdapter
             // 
@@ -1237,9 +1328,9 @@
             this.btnNextPage,
             this.toolStripSeparator3,
             this.btnLastPage});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 689);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 702);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1200, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1200, 25);
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1273,7 +1364,7 @@
             this.btnFirstPage.Image = ((System.Drawing.Image)(resources.GetObject("btnFirstPage.Image")));
             this.btnFirstPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(33, 35);
+            this.btnFirstPage.Size = new System.Drawing.Size(33, 22);
             this.btnFirstPage.Text = "First";
             this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
@@ -1326,12 +1417,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1200, 727);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Scarran Music Database";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1374,6 +1465,8 @@
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView13)).EndInit();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scarranMusicDataSetBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -1495,6 +1588,11 @@
         private System.Windows.Forms.ToolStripButton btnLastPage;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

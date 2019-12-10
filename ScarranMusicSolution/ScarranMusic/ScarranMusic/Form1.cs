@@ -39,7 +39,7 @@ namespace ScarranMusic
             this.songTableAdapter.Fill(this.scarranMusicDataSet.Song);
             this.albumTableAdapter.Fill(this.scarranMusicDataSet.Album);
 
-            label10.Text = (System.Convert.ToInt32((sqlQuery("SELECT MAX(playlistID) FROM Playlist").Rows[0][0]).ToString()) + 1).ToString();
+            label10.Text = sqlQuery("SELECT  AUTO_INCREMENT FROM information_schema.TABLES WHERE(TABLE_NAME = 'Playlist')").Rows[0][0].ToString();
 
             dataGridView10.DataSource = sqlQuery(
                 @"SELECT Album.albumID, albumTitle, liveRecording
@@ -64,6 +64,14 @@ namespace ScarranMusic
 
             btnFirstPage.Enabled = false;
             btnPreviousPage.Enabled = false;
+
+            label8.Enabled = false;
+            button1.Enabled = false;
+            label8.Visible = false;
+            button1.Visible = false;
+
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            dataGridView12.DataSource = sqlQuery("SELECT 'No matching records found.' AS result");
         }
 
         private void CalculateTotalPages()
@@ -429,14 +437,21 @@ namespace ScarranMusic
                     JOIN Band on BandAlbum.bandID = Band.bandID
                     WHERE Band.bandID = " + dataGridView9.CurrentRow.Cells[0].Value.ToString());
 
-            dataGridView11.DataSource = sqlQuery(
-                @"SELECT Song.songID, songTitle, duration, lyrics
+            if (dataGridView10.CurrentRow != null)
+            {
+                dataGridView11.DataSource = sqlQuery(
+                    @"SELECT Song.songID, songTitle, duration, lyrics
                     FROM Song
                     JOIN BandSong ON Song.songID = BandSong.songID
                     JOIN Band on BandSong.bandID = Band.bandID
                     JOIN AlbumSong on AlbumSong.songID = Song.songID
                     WHERE Band.bandID = " + dataGridView9.CurrentRow.Cells[0].Value.ToString() +
-                    " AND AlbumSong.albumID = " + dataGridView10.CurrentRow.Cells[0].Value.ToString());
+                        " AND AlbumSong.albumID = " + dataGridView10.CurrentRow.Cells[0].Value.ToString());
+            }
+            else
+            {
+                dataGridView11.DataSource = null;
+            }
         }
 
         private void dataGridView10_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -498,7 +513,7 @@ namespace ScarranMusic
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox5.Text = "";
-            dataGridView12.DataSource = null;
+            dataGridView12.DataSource = sqlQuery("SELECT 'No matching records found.' AS result");
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -589,9 +604,9 @@ namespace ScarranMusic
                 dataGridView12.DataSource = songBindingSource;
             }
 
-            if (textBox5.Text == "")
+            if (textBox5.Text == "" || dataGridView12.RowCount == 0)
             {
-                dataGridView12.DataSource = null;
+                dataGridView12.DataSource = sqlQuery("SELECT 'No matching records found.' AS result");
             }
         }
 
@@ -625,7 +640,7 @@ namespace ScarranMusic
             myConnection.Close();
 
             textBox6.Text = "";
-            label10.Text = (System.Convert.ToInt32((sqlQuery("SELECT MAX(playlistID) FROM Playlist").Rows[0][0]).ToString()) + 1).ToString();
+            label10.Text = sqlQuery("SELECT  AUTO_INCREMENT FROM information_schema.TABLES WHERE(TABLE_NAME = 'Playlist')").Rows[0][0].ToString();
             label8.Enabled = false;
             button1.Enabled = false;
             dataGridView13.ClearSelection();
@@ -637,11 +652,15 @@ namespace ScarranMusic
             {
                 label8.Enabled = true;
                 button1.Enabled = true;
+                label8.Visible = true;
+                button1.Visible = true;
             }
             else
             {
                 label8.Enabled = false;
                 button1.Enabled = false;
+                label8.Visible = false;
+                button1.Visible = false;
             }
         }
 
@@ -671,12 +690,21 @@ namespace ScarranMusic
             {
                 label8.Enabled = true;
                 button1.Enabled = true;
+                label8.Visible = true;
+                button1.Visible = true;
             }
             else
             {
                 label8.Enabled = false;
                 button1.Enabled = false;
+                label8.Visible = false;
+                button1.Visible = false;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/chandler-stevens/scarran-music");
         }
     }
 }
