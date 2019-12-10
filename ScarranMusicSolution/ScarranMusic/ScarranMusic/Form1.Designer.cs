@@ -474,7 +474,6 @@
             // 
             // dataGridView5
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
             this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -422,7 +422,7 @@ namespace ScarranMusic
                         FROM Song
                         JOIN PlaylistSong ON PlaylistSong.songID = Song.songID
                         JOIN Playlist ON Playlist.playlistID = PlaylistSong.playlistID
-                        GROUP BY Playlist.playlistID;");
+                        GROUP BY Playlist.playlistID");
             }
 
             comboBox2.SelectedItem = "All";
